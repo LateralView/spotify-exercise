@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./public:/public
+    environment:
+      APP_PORT: "3000"
+      DB_FILE: "/db/db.json"
+    links:
+      - db
