@@ -8,7 +8,7 @@ chai.use(sinonChai);
 chai.use(chaiAsPromised);
 
 describe('App Default Route Test', function() {
-  beforeEach(angular.mock.module('kickoff'));
+  beforeEach(angular.mock.module('spotifyzier'));
 
   it('Should set "/" as default route', angular.mock.inject(function($rootScope, $location) {
     $location.path('/a/invalid-route');
