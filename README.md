@@ -54,3 +54,6 @@ When you run the application, you can open the documentation hitting the `/docs`
 1. Install karma-cli with: `npm install -g karma-cli`.
 2. Hit `karma start` on the project root.
 3. You will see the console and browser running the test suite, also, the coverage will be generated under `coverage/frontend` folder
+
+### Designs
+Ask @negan1911 or @nicogelpi to share you the permissions of the designs, [Zeplin](https://zeplin.io/) is required.
