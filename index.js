@@ -16,7 +16,7 @@ app.use(helmet());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static('public'));
+app.use(express.static('dist'));
 app.use('/docs', express.static('doc'));
 app.use('/comments', comment);
 app.use('/search', search);

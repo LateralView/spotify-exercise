@@ -1,0 +1,14 @@
+// Import from npm
+@import 'normalize.css';
+
+$background-color: #fff;
+
+body {
+  background: $background-color;
+
+  section {
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+  }
+}

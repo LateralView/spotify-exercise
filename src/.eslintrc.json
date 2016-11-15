@@ -1,0 +1,37 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "protractor": true,
+    "mocha": true
+  },
+  "plugins": ["angular"],
+  "extends": ["eslint:recommended", "angular"],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-warning-comments": 1,
+    "no-unused-vars": 1,
+    "no-console": 1,
+    "angular/log": 1
+  }
+}
