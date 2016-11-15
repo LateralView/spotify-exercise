@@ -13,6 +13,6 @@ services:
       - ./public:/public
     environment:
       APP_PORT: "3000"
-      DB_FILE: "/db/db.json"
+      DB_URL: "mongodb://db:27017/spotifyzier"
     links:
-      - db
+      - "db"
