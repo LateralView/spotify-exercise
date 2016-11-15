@@ -31,3 +31,26 @@ The technology used on the frontend side should be:
 3. Run `npm install -g gulp` and `gulp build` on the root project folder to generate the backend documentation.
 4. Go to the *Public/* folder and run `gulp build` to generate the basic frontend build.
 5. On the core project folder, just run `npm start` to start the application open your browser pointing to `http://localhost:3000`.
+
+### Backend documentation
+When you run the application, you can open the documentation hitting the `/docs` endpoint, also, if you want to see more about the response of the search you will need to review the [Spotify API](https://developer.spotify.com/web-api/search-item/).
+
+### Gulp tasks (frontend)
+* `gulp frontend:watch`: Minify styles and generate build on every change, useful for development purposes.
+
+* `gulp frontend:build`: Minify styles and generate a build, useful on Demo/Prod.
+
+### Gulp tasks (backend)
+* `gulp test`: Run Mocha tests for the backend, create coverage inside `coverage/backend` folder.
+
+* `gulp doc`: Create Backend APIDOC documentation inside `/doc` folder, it is available under `/docs` endpoint.
+
+* `gulp backend:build`: Shorthand for `gulp doc`.
+
+### Gulp Build
+* `gulp build`: Shorthand that will run backend and frontend build tasks at the same time.
+
+### How to test
+1. Install karma-cli with: `npm install -g karma-cli`.
+2. Hit `karma start` on the project root.
+3. You will see the console and browser running the test suite, also, the coverage will be generated under `coverage/frontend` folder
