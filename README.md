@@ -57,3 +57,4 @@ When you run the application, you can open the documentation hitting the `/docs`
 
 ### Designs
 Ask @negan1911 or @nicogelpi to share you the permissions of the designs, [Zeplin](https://zeplin.io/) is required.
+There is a [Preview of the Zeplin Design](https://scene.zeplin.io/project/582b01162ad47b3e76efd0e7)
