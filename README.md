@@ -58,3 +58,6 @@ When you run the application, you can open the documentation hitting the `/docs`
 ### Designs
 Ask @negan1911 or @nicogelpi to share you the permissions of the designs, [Zeplin](https://zeplin.io/) is required.
 There is a [Preview of the Zeplin Design](https://scene.zeplin.io/project/582b01162ad47b3e76efd0e7)
+
+#### Important Comments (Rev. 11/17/2016)
+At the moment of the release of this repository, there is an [issue with ui-router](https://github.com/angular-ui/ui-router/issues/2627) that doesn't allow you to use the `component: 'componentName'` property on the state definition, use the `template: '<component-name></component-name>'` syntax until this is resolved, you can track the resolution in the link above
