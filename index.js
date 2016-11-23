@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const search = require('./server/search');
 const comment = require('./server/comment');
+const album = require('./server/album');
 const app = express();
 
 // Set default promise as provider and connect mongoose
@@ -20,6 +21,7 @@ app.use(express.static('dist'));
 app.use('/docs', express.static('doc'));
 app.use('/comments', comment);
 app.use('/search', search);
+app.use('/album', album);
 app.listen((process.env.APP_PORT || 3000), () => {
   console.log('SERVER: 127.0.0.1:' + (process.env.APP_PORT || '3000'));
 });
