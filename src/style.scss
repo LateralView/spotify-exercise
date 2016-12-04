@@ -1,7 +1,9 @@
 // Import from npm
 @import 'normalize.css';
+@import 'components/components';
+@import 'common/common';
 
-$background-color: #fff;
+$background-color: #282828;
 
 body {
   background: $background-color;

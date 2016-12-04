@@ -13,7 +13,7 @@ const istanbul = require('gulp-istanbul');
 // Define Variables
 const dest = 'dist/';
 const watch = 'src/**/*';
-const mainSass = 'src/*.scss';
+const mainSass = 'src/style.scss';
 const mainJs = 'src/index.js';
 const webpackFile = './webpack.config.js';
 
