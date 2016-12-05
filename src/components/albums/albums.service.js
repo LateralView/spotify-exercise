@@ -1,14 +1,17 @@
 export class AlbumsService {
   constructor($http) {
+    console.log('ALBUMS-SERVICE: constructor');
     'ngInject;'
     this.$http = $http;
   }
   
-  getAlbums(query) {
-    let finalQuery = query.replace(/ /g, '+');
-    //let finalQuery = query.split(' ').join('+');
-    console.log('QUERY:', query);
-    console.log('FINAL-QUERY:', finalQuery);
-    return this.$http.get('/search?q='+ finalQuery).then(response => response.data);
+  getAlbums(albumName) {
+    console.log('ALBUMS-SERVICE: getAlbums');
+    let finalAlbumName = albumName.replace(/ /g, '+');
+    let query = '/search?q=' + finalAlbumName;
+    return this.$http({
+      method: 'GET',
+      url: query
+    }).then(response => response.data);
   }
 }

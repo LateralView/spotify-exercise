@@ -1,42 +1,37 @@
 import template from './albums.html';
+import { AlbumsListComponent} from './albums-list/albums-list.component.js';
 
 export const AlbumsComponent = {
   template,
   controller: class AlbumsComponent {
     
     constructor(AlbumsService) {
-      console.log('AlbumsService in COMPONENT:', AlbumsService);
+      console.log('ALBUMS-COMPONENT: constructor');
       'ngInject';
       this.albumsService = AlbumsService;
-      console.log('AlbumsComponent: CONSTRUIDO');
+      this.albumToSearch = '';
+      this.albums = [];
+      this.albumsTotal = 0;
+      this.albumsLimit = 0;
     }
     
     $onInit() {
-      console.log('AlbumsComponent: INICIADO');
-      this.albums = [];
-      this.albumsService.getAlbums('rata blanca').then((response) => {
+      console.log('ALBUMS-COMPONENT: $onInit');    
+    }
+
+    onKeyPress(keyEvent) {
+      console.log('ALBUMS-COMPONENT: onKeyPress'); 
+      if (keyEvent.which === 13)  this.search();
+    }
+
+    search() {
+      console.log('ALBUMS-COMPONENT: search');
+      this.albumsService.getAlbums(this.albumToSearch).then((response) => {
         console.log('RESPONSE:', response);
-        this.albums = response;
-      });
-      console.log('Albums from Service:', this.albums);
-      /*
-      this.newTodo = {
-        title: '',
-        selected: false
-      };
-      this.todos = [];
-      this.todoService.getTodos().then(response => this.todos = response);
-      */
+        this.albums = response.albums.items;
+        this.albumsTotal = response.albums.total;
+        this.albumsLimit = response.albums.limit;
+      }); 
     }
-    /*
-    addTodo({ todo }) {
-      if (!todo) return;
-      this.todos.unshift(todo);
-      this.newTodo = {
-        title: '',
-        selected: false
-      };
-    }
-    */
   }
 };

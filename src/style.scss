@@ -1,9 +1,13 @@
 // Import from npm
 @import 'normalize.css';
-@import 'components/components';
-@import 'common/common';
+// Components
+@import 'components/albums/albums';
+@import 'components/albums/albums-list/albums-list';
+@import 'components/albums/albums-list/albums-list-item/albums-list-item';
+@import 'components/comments/comments';
+// Common
 
-$background-color: #282828;
+$background-color: #000000;
 
 body {
   background: $background-color;
