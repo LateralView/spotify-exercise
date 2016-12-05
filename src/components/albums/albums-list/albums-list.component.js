@@ -10,6 +10,7 @@ export const AlbumsListComponent = {
     
     constructor() {
       console.log('ALBUMS-LIST-COMPONENT: constructor');
+      console.log('ALBUMS in LIST:', this.albums);
     }
     
     $onInit() {

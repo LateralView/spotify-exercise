@@ -1,4 +1,7 @@
 import template from './comments.html';
+import { CommentsHeaderComponent} from './comments-header/comments-header.component.js';
+import { CommentsFormComponent} from './comments-form/comments-form.component.js';
+import { CommentsListComponent} from './comments-list/comments-list.component.js';
 
 export const CommentsComponent = {
   bindings: {
@@ -13,22 +16,34 @@ export const CommentsComponent = {
       this.comments = [];
       this.commentsTotal = 0;
       this.commentsLimit = 0;
+      this.isAddingComment = false;
     }
     
     $onInit() {
       console.log('COMMENTS-COMPONENT: $onInit'); 
       console.log('ALBUM-ID:', this.albumId);
-      this.load();
+      this.loadComments();
     }
     
-    load() {
-      console.log('COMMENTS-COMPONENT: load'); 
+    loadComments() {
+      console.log('COMMENTS-COMPONENT: loadComments'); 
       this.commentsService.getComments(this.albumId).then((response) => {
         console.log('RESPONSE:', response);
-        //this.comments = response.comments.items;
-        //this.commentsTotal = response.comments.total;
-        //this.commentsLimit = response.comments.limit;
+        this.comments = response;
+        this.commentsTotal = response.length;
       }); 
+    }
+
+    startAddingComment(event) {
+      console.log('COMMENTS-COMPONENT: startAddingComment');
+      console.log('COMMENTS-COMPONENT: startAddingComment -> EVENT:', event);
+      this.isAddingComment = true;
+    }
+
+    cancelAddingComment(event) {
+      console.log('COMMENTS-COMPONENT: cancelAddingComment');
+      console.log('COMMENTS-COMPONENT: cancelAddingComment -> EVENT:', event);
+      this.isAddingComment = false;
     }
   }
 };

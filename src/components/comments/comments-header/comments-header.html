@@ -1,4 +1,5 @@
 <div class="comments__header">
+  <h2>COMMENTS HEADER</h2>
   <div class="comments__header__title">
     <span class="comments__header__title__text">
       COMMENTS
@@ -9,8 +10,8 @@
       Add comment
     <span>
     <span class="comments__header__adder__controls">
-      <button ng-if="!$ctrl.isAddingComment">ADD</button>
-      <button ng-if="$ctrl.isAddingComment">CLOSE</button>
+      <button ng-if="!$ctrl.addingComment" ng-click="$ctrl.startAddingComment()">ADD</button>
+      <button ng-if="$ctrl.addingComment" ng-click="$ctrl.cancelAddingComment()">CLOSE</button>
     <span>
   </span>
 </div>

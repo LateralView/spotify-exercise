@@ -1,6 +1,8 @@
 <div class="comments">
-  <comments-header></comments-header>
-  <comments-form></comments-form>
-  <comments-list></comments-list>
+  <h1>COMMENTS</h1>
+  <comments-header adding-comment="$ctrl.isAddingComment" on-start-adding-comment="$ctrl.startAddingComment($event);" on-cancel-adding-comment="$ctrl.cancelAddingComment"></comments-header>
+  <button ng-click="$ctrl.isAddingComment = !$ctrl.isAddingComment"></button>
+  <comments-form ng-if="$ctrl.isAddingComment"></comments-form>
+  <comments-list comments="$ctrl.comments"></comments-list>
   <button class="show-more">SHOW MORE COMMENTS</button>
 </div>
