@@ -14,58 +14,37 @@ export const CommentsComponent = {
       'ngInject';
       this.commentsService = CommentsService;
       this.comments = [];
-      this.commentsTotal = 0;
-      this.commentsLimit = 0;
       this.isAddingComment = false;
     }
     
     $onInit() {
       console.log('COMMENTS-COMPONENT: $onInit'); 
-      console.log('ALBUM-ID:', this.albumId);
       this.loadComments();
     }
     
     loadComments() {
       console.log('COMMENTS-COMPONENT: loadComments'); 
       this.commentsService.getComments(this.albumId).then((response) => {
-        console.log('RESPONSE:', response);
         this.comments = response;
-        this.commentsTotal = response.length;
       }); 
     }
 
-    startAddingComment(event) {
+    startAddingComment() {
       console.log('COMMENTS-COMPONENT: startAddingComment');
-      console.log('COMMENTS-COMPONENT: startAddingComment -> EVENT:', event);
       this.isAddingComment = true;
     }
 
-    cancelAddingComment(event) {
+    cancelAddingComment() {
       console.log('COMMENTS-COMPONENT: cancelAddingComment');
-      console.log('COMMENTS-COMPONENT: cancelAddingComment -> EVENT:', event);
       this.isAddingComment = false;
+    }
+
+    finishAddingComment({ comment }) {
+      console.log('COMMENTS-COMPONENT: finishAddingComment');
+      let newComment = Object.assign({ albumId: this.albumId }, comment);
+      this.isAddingComment = false;
+      this.commentsService.putComment(newComment);
+      this.loadComments();
     }
   }
 };
-    /*
-    
-    */
-
-    /*
-      this.newTodo = {
-        title: '',
-        selected: false
-      };
-      this.todos = [];
-      this.todoService.getTodos().then(response => this.todos = response);
-
-    addTodo({ todo }) {
-      if (!todo) return;
-      this.todos.unshift(todo);
-      this.newTodo = {
-        title: '',
-        selected: false
-      };
-    }
-    */
-

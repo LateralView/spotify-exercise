@@ -17,18 +17,14 @@ export const CommentsHeaderComponent = {
       console.log('COMMENTS-HEADER-COMPONENT: $onInit');    
     }
     
-    startAddingComment() {
+    startAdding() {
       console.log('COMMENTS-HEADER-COMPONENT: startAddingComment'); 
-      this.onStartAddingComment({
-        $event: {
-          eventName: "START-ADDING-COMMENT"
-        }
-      });
+      this.onStartAddingComment();
     }
 
-    cancelAddingComment() {
+    cancelAdding() {
       console.log('COMMENTS-HEADER-COMPONENT: cancelAddingComment');
-      //this.onCancelAddingComment();
+      this.onCancelAddingComment();
     }
     
   }
