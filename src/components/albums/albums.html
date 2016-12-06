@@ -1,7 +1,8 @@
 <div class="albums">
-  <h1>ALBUMS</h1>
   <div class="albums__search">
-    <input ng-model="$ctrl.albumToSearch" ng-keypress="$ctrl.onKeyPress($event)">
+    <form name="searchForm" ng-submit="$ctrl.search();">
+      <input type="text" placeholder="Search" ng-model="$ctrl.albumToSearch">
+    </form>
   </div>
   <albums-list albums="$ctrl.albums"></albums-list>
 </div>

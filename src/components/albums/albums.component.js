@@ -19,11 +19,6 @@ export const AlbumsComponent = {
       console.log('ALBUMS-COMPONENT: $onInit');    
     }
 
-    onKeyPress(keyEvent) {
-      console.log('ALBUMS-COMPONENT: onKeyPress'); 
-      if (keyEvent.which === 13)  this.search();
-    }
-
     search() {
       console.log('ALBUMS-COMPONENT: search');
       this.albumsService.getAlbums(this.albumToSearch).then((response) => {

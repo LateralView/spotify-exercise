@@ -1,5 +1,8 @@
 // Import from npm
 @import 'normalize.css';
+// Common
+@import 'common/colors';
+@import 'common/base';
 // Components
 @import 'components/albums/albums';
 @import 'components/albums/albums-list/albums-list';
@@ -9,16 +12,3 @@
 @import 'components/comments/comments-form/comments-form';
 @import 'components/comments/comments-list/comments-list';
 @import 'components/comments/comments-list/comments-list-item/comments-list-item';
-// Common
-
-$background-color: #000000;
-
-body {
-  background: $background-color;
-
-  section {
-    height: 100vh;
-    position: relative;
-    width: 100vw;
-  }
-}
