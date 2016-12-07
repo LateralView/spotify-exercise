@@ -10,8 +10,10 @@
       <span class="album__info">{{$ctrl.album.name}}</span>
     </div>
     <div class="spotify">
-      <span class="spotify__image"><span class="volume-icon"><i class="fa fa-volume-up"></i></span></span>
-      <span class="spotify__link"><a ng-href={{$ctrl.album.external_urls.spotify}} target="_blank">Listen on Spotify</a></span>
+      <a ng-href={{$ctrl.album.external_urls.spotify}} target="_blank">
+        <span class="volume-icon"><i class="fa fa-volume-up"></i></span>
+      </a>
+      <span class="text">Listen on Spotify</span>
     </div>
   </div>
   <div class="albums__list__item__controls">

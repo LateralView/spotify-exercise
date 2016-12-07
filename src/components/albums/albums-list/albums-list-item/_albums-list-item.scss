@@ -100,6 +100,38 @@
         align-self: flex-end;
       }
 
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        margin-right: 14px;
+        border-radius: 30px;
+        background-color: $gray;
+
+        @media only screen and (min-width: 1024px) {
+          border: solid 1px $white;
+        }
+
+        .volume-icon {
+          width: 16px;
+          height: 16px;
+
+          .fa-volume-up {
+            font-size: 16px;
+            color: $white;
+          }
+        }
+      }
+
+      .text {
+        font-size: 13px;
+        letter-spacing: 0.2px;
+        text-align: left;
+        color: $shamrock-green;
+      }
+
       &__image {
         display: flex;
         justify-content: center;
@@ -107,7 +139,7 @@
         width: 30px;
         height: 30px;
         margin-right: 14px;
-        border-radius: 40px;
+        border-radius: 30px;
         background-color: $gray;
 
         @media only screen and (min-width: 1024px) {
@@ -134,6 +166,7 @@
         a {
           font-size: 13px;
           letter-spacing: 0.2px;
+          text-align: left;
           color: $shamrock-green;
         }
 
@@ -165,8 +198,8 @@
       width: 160px;
       height: 30px;
       margin: 0;
-      border-radius: 40px;
       border: solid 1px $shamrock-green;
+      border-radius: 40px;
       padding: 0;
       background-color: $hard-gray;
 
@@ -182,6 +215,7 @@
         padding: 0;
         color: $white;
         font-size: 12px;
+        cursor: pointer;
       }
 
       &--comments {

@@ -1,9 +1,9 @@
 <div class="comments__list__item">
   <div class="comments__list__item__image">
-    <img ng-src={{$ctrl.comment.avatar}} alt="User Avatar" width="100" height="100">
+    <img ng-src={{$ctrl.comment.avatar}} alt="User Avatar">
   </div>
   <div class="comments__list__item__info">
-    <div class="email">{{$ctrl.comment.email}}</div>
-    <div class="text">{{$ctrl.comment.text}}</div>
+    <span class="email">{{$ctrl.comment.email}}</span>
+    <span class="text">{{'"' + $ctrl.comment.text + '"'}}</span>
   </div>
 </div>

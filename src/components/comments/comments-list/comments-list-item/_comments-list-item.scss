@@ -1,5 +1,51 @@
 .comments__list__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   margin: 0;
   margin-bottom: 5px;
+  padding: 12px;
   background-color: $hard-gray;
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-right: 12px;
+    width: 50px;
+    padding: 0;
+    background-color: $gray;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    width: 75%;
+    
+    .email {
+      width: 100%;
+      font-size: 12px;
+      letter-spacing: 0.2px;
+      text-align: left;
+      color: $light-gray;
+    }
+
+    .text {
+      width: 100%;
+      word-wrap: break-word;
+      font-size: 14px;
+      letter-spacing: 0.2px;
+      text-align: left;
+      color: $white;
+    }
+  }
 }

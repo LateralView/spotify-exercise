@@ -11,6 +11,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 50%;
+    height: 24px;
 
     &__text {
       font-size: 14px;
@@ -20,26 +21,92 @@
     }
   }
 
-  &__adder {
+  &__controls {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     width: 50%;
+    height: 24px;
 
-    &__text {
-      display: none;
-      font-size: 13px;
-      letter-spacing: 0.2px;
-      text-align: right;
-      color: $shamrock-green;
+    &__add {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      height: 24px;
+      
+      .text {
+        display: none;
+        margin-right: 8px;
+        font-size: 13px;
+        letter-spacing: 0.2px;
+        text-align: right;
+        color: $shamrock-green;
 
-      @media only screen and (min-width: 1024px) {
-        display: block;
+        @media only screen and (min-width: 1024px) {
+          display: block;
+        }
+      }
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        margin-right: 12px;
+        width: 24px;
+        height: 24px;
+        border: none;
+        border-radius: 24px;
+        background: none;
+        padding: 0;
+        background-color: $gray;
+        cursor: pointer;
+
+        .plus-icon {
+          width: 16px;
+          height: 16px;
+
+          .fa-plus {
+            font-size: 16px;
+            color: $shamrock-green;
+          }
+        }
       }
     }
 
-    &_controls {
+    &__close {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      height: 24px;
 
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        margin-right: 12px;
+        width: 24px;
+        height: 24px;
+        border: none;
+        border-radius: 24px;
+        background: none;
+        padding: 0;
+        background-color: $gray;
+        cursor: pointer;
+
+        .close-icon {
+          width: 16px;
+          height: 16px;
+
+          .fa-times {
+            font-size: 16px;
+            color: $shamrock-green;
+          }
+        }
+      }
     }
   }
 }
