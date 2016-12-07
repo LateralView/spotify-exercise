@@ -1,5 +1,107 @@
 .albums__list__item {
-  border: solid 2px #0000ff;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 14px;
+  width: 100%;
+  height: 337px;
   background-color: #ffffff;
+
+  @media only screen and (min-width: 1024px) {
+    flex-direction: row;
+    height: 180px;
+  }
+
+  &__image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 153px;
+    background-color: $gray;
+
+    @media only screen and (min-width: 1024px) {
+      width: 180px;
+      height: 100%;
+    }
+
+    img {
+      width: 132px;
+      height: 132px;
+
+      @media only screen and (min-width: 1024px) {
+        width: 180px;
+        height: 180px;
+      }
+    }
+  }
+
+  &__info {
+    width: 100%;
+    height: 118px;
+    background-color: $hard-gray;
+
+    @media only screen and (min-width: 1024px) {
+      width: 526px;
+      height: 100%;
+      background-color: $gray;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 66px;
+    background-color: $gray;
+
+    .button-comments {
+      
+      .fa-angle-left {
+        color: $shamrock-green;
+      }
+    }
+
+    img {
+      -webkit-filter: grayscale(100%); 
+      filter: grayscale(100%);
+    }
+
+    form {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      max-width: 1004px;
+      height: 24px;
+      border-radius: 40px;
+      padding: 0 5px;
+      background-color: $white;
+      font-size: 12px;
+      
+      img {
+        width: 24px;
+        height: 24px;
+      }
+      
+      input {
+        width: 90%;
+        height: 100%;
+        border: none;
+        color: $hard-gray;
+        line-height: 1;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      width: 250px;
+      height: 100%;
+    }
+  }
 }

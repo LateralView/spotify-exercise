@@ -1,5 +1,4 @@
 <div class="albums__list__item">
-  <h3>ALBUMS LIST ITEM</h3>
   <div class="albums__list__item__image">
     <img ng-src={{$ctrl.album.images[0].url}} alt="Album Cover" width="200" height="200">
   </div>
@@ -9,8 +8,11 @@
     <div><img><a ng-href={{$ctrl.album.external_urls.spotify}} target="_blank">Listen on Spotify</a></div>
   </div>
   <div class="albums__list__item__controls">
-    <button ng-if="!$ctrl.isWatchingComment" ng-click="$ctrl.switchComment()">VIEW COMMENTS</button>
-    <button ng-if="$ctrl.isWatchingComment" ng-click="$ctrl.switchComment()">BACK TO SEARCH</button>
+    <div class="button-comments">
+      <i class="fa fa-angle-left fa-lg"></i>
+      <button ng-if="!$ctrl.isWatchingComment" ng-click="$ctrl.switchComment()">VIEW COMMENTS</button>
+      <button ng-if="$ctrl.isWatchingComment" ng-click="$ctrl.switchComment()">BACK TO SEARCH</button>
+    </div>
   </div>
   <comments album-id="$ctrl.album.id" ng-if="$ctrl.isWatchingComment"></comments>
 </div>

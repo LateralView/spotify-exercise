@@ -4,15 +4,15 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+}
+
 body {
   background-color: $black;
   font-family: Arial, sans-serif;
   font-size: 13px;
   color: $white;
-
-  span {
-    color: $white;
-  }
 
   section {
     position: relative;

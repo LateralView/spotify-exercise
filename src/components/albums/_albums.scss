@@ -1,25 +1,48 @@
 .albums {
+  background-color: $black;
+  
+  @media only screen and (min-width: 321px) {
+
+  }
 
   &__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 52px;
+    padding: 14px;
     background-color: $hard-gray;
     
     form {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 1006px;
-      height: 51px;
+      width: 100%;
+      max-width: 1004px;
+      height: 24px;
+      border-radius: 40px;
+      padding: 0 5px;
+      background-color: $white;
+      font-size: 12px;
 
-      input {
-        width: 100%;
+      .search-icon {
+        position: relative;
+        width: 24px;
         height: 24px;
+
+        .fa-search {
+          position: absolute;
+          top: 3px;
+          left: 2px;
+          font-size: 16px;
+          color: $hard-gray;
+        }
+      }
+      
+      input {
+        width: 90%;
+        height: 100%;
         border: none;
-        border-radius: 40px;
-        background-color: $white;
-        padding: 2px 15px 2px 25px;
-        font-size: 12px;
         color: $hard-gray;
         line-height: 1;
         letter-spacing: 0.5px;
