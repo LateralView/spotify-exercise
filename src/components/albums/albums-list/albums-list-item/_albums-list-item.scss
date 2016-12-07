@@ -6,17 +6,14 @@
   margin: 0;
   margin-bottom: 14px;
   width: 100%;
-  height: 337px;
   background-color: #ffffff;
 
   @media only screen and (min-width: 1024px) {
     flex-direction: row;
-    height: 180px;
   }
 
   &__image {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -25,7 +22,7 @@
 
     @media only screen and (min-width: 1024px) {
       width: 180px;
-      height: 100%;
+      height: 180px;
     }
 
     img {
@@ -40,68 +37,183 @@
   }
 
   &__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100%;
     height: 118px;
+    padding: 9px 15px;
     background-color: $hard-gray;
 
     @media only screen and (min-width: 1024px) {
-      width: 526px;
-      height: 100%;
+      width: 576px;
+      height: 180px;
+      padding: 20px 0 20px 30px;
       background-color: $gray;
+    }
+
+    .artist {
+      width: 100%;
+      height: 17px;
+      white-space: nowrap;  
+      overflow: hidden;
+      text-overflow: ellipsis; 
+      
+      &__info {
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        text-align: left;
+        color: $light-gray;
+      }
+    }
+
+    .album {
+      width: 100%;
+      height: 46px;
+      white-space: nowrap;  
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &__info { 
+        font-size: 30px;
+        line-height: 1.5;
+        text-align: left;
+        color: $white;
+
+        @media only screen and (min-width: 1024px) {
+          font-size: 40px;
+          line-height: 1;
+        }
+      }
+    }
+
+    .spotify {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      height: 37px;
+
+      @media only screen and (min-width: 1024px) {
+        align-self: flex-end;
+      }
+
+      &__image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        margin-right: 14px;
+        border-radius: 40px;
+        background-color: $gray;
+
+        @media only screen and (min-width: 1024px) {
+          border: solid 1px $white;
+        }
+
+        .volume-icon {
+          width: 16px;
+          height: 16px;
+
+          .fa-volume-up {
+            font-size: 16px;
+            color: $white;
+          }
+        }
+      }
+
+      &__link {
+        height: 30px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        a {
+          font-size: 13px;
+          letter-spacing: 0.2px;
+          color: $shamrock-green;
+        }
+
+        a:link, a:visited, a:hover, a:active {
+          text-decoration: none;
+        }
+      }
     }
   }
 
   &__controls {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 66px;
     background-color: $gray;
 
-    .button-comments {
-      
-      .fa-angle-left {
-        color: $shamrock-green;
-      }
+    @media only screen and (min-width: 1024px) {
+      justify-content: flex-end;
+      align-items: flex-end;
+      width: 200px;
+      height: 180px;
     }
 
-    img {
-      -webkit-filter: grayscale(100%); 
-      filter: grayscale(100%);
-    }
-
-    form {
+    .button-container {
       display: flex;
-      justify-content: flex-start;
       align-items: center;
-      width: 100%;
-      max-width: 1004px;
-      height: 24px;
+      width: 160px;
+      height: 30px;
+      margin: 0;
       border-radius: 40px;
-      padding: 0 5px;
-      background-color: $white;
-      font-size: 12px;
-      
-      img {
-        width: 24px;
-        height: 24px;
+      border: solid 1px $shamrock-green;
+      padding: 0;
+      background-color: $hard-gray;
+
+      @media only screen and (min-width: 1024px) {
+        margin: 0 30px 20px 0;
+        padding: 0 5px;
       }
-      
-      input {
-        width: 90%;
+
+      button {
         height: 100%;
         border: none;
-        color: $hard-gray;
-        line-height: 1;
-        letter-spacing: 0.5px;
+        background: none;
+        padding: 0;
+        color: $white;
+        font-size: 12px;
       }
-    }
 
-    @media only screen and (min-width: 1024px) {
-      width: 250px;
-      height: 100%;
+      &--comments {
+        justify-content: center;
+
+        button {
+          width: 100%;
+        }
+      }
+
+      &--back {
+        justify-content: flex-start;
+
+        .back-icon {
+          position: relative;
+          width: 15px;
+          height: 24px;
+
+          .fa-angle-left {
+            position: absolute;
+            left: 7px;
+            font-size: 22px;
+            color: $white;
+          }
+        }
+
+        button {
+          width: 85%;
+        }
+      }
+
+      
     }
   }
 }

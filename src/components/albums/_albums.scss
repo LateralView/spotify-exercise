@@ -1,9 +1,5 @@
 .albums {
   background-color: $black;
-  
-  @media only screen and (min-width: 321px) {
-
-  }
 
   &__search {
     display: flex;
@@ -43,6 +39,7 @@
         width: 90%;
         height: 100%;
         border: none;
+        background: none;
         color: $hard-gray;
         line-height: 1;
         letter-spacing: 0.5px;
