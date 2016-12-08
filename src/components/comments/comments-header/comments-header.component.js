@@ -9,23 +9,12 @@ export const CommentsHeaderComponent = {
   template,
   controller: class CommentsHeaderComponent {
     
-    constructor() {
-      console.log('COMMENTS-HEADER-COMPONENT: constructor');
-    }
-    
-    $onInit() {
-      console.log('COMMENTS-HEADER-COMPONENT: $onInit');    
-    }
-    
-    startAdding() {
-      console.log('COMMENTS-HEADER-COMPONENT: startAddingComment'); 
+    startAdding() { 
       this.onStartAddingComment();
     }
 
     cancelAdding() {
-      console.log('COMMENTS-HEADER-COMPONENT: cancelAddingComment');
       this.onCancelAddingComment();
     }
-    
   }
 };

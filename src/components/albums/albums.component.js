@@ -7,22 +7,14 @@ export const AlbumsComponent = {
   controller: class AlbumsComponent {
     
     constructor(AlbumsService) {
-      console.log('ALBUMS-COMPONENT: constructor');
       'ngInject';
       this.albumsService = AlbumsService;
-      this.albumToSearch = 'rata';
+      this.albumToSearch = '';
       this.albums = [];
-      this.search();
-    }
-    
-    $onInit() {
-      console.log('ALBUMS-COMPONENT: $onInit');    
     }
 
     search() {
-      console.log('ALBUMS-COMPONENT: search');
       this.albumsService.getAlbums(this.albumToSearch).then((response) => {
-        console.log('RESPONSE:', response);
         this.albums = response.albums.items;
       }); 
     }

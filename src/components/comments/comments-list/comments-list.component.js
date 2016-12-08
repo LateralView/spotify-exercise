@@ -7,14 +7,6 @@ export const CommentsListComponent = {
   },
   template,
   controller: class CommentsListComponent {
-    
-    constructor() {
-      console.log('COMMENTS-LIST-COMPONENT: constructor');
-      console.log('COMMENTS in LIST:', this.comments);
-    }
-    
-    $onInit() {
-      console.log('COMMENTS-LIST-COMPONENT: $onInit');    
-    }
+
   }
 };

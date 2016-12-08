@@ -9,12 +9,7 @@ export const AlbumsListItemComponent = {
   controller: class AlbumsListItemComponent {
     
     constructor() {
-      console.log('ALBUMS-LIST-ITEM-COMPONENT: constructor');
       this.isWatchingComment = false;
-    }
-    
-    $onInit() {
-      console.log('ALBUMS-LIST-ITEM-COMPONENT: $onInit');    
     }
 
     switchComment() {

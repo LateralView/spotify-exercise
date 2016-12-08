@@ -6,13 +6,6 @@ export const CommentsListItemComponent = {
   },
   template,
   controller: class CommentsListItemComponent {
-    
-    constructor() {
-      console.log('COMMENTS-LIST-ITEM-COMPONENT: constructor');
-    }
-    
-    $onInit() {
-      console.log('COMMENTS-LIST-ITEM-COMPONENT: $onInit');    
-    }
+
   }
 };
