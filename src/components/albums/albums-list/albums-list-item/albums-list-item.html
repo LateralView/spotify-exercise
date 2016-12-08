@@ -1,29 +1,25 @@
 <div class="albums__list__item">
   <div class="albums__list__item__image">
-    <img ng-src={{$ctrl.album.images[0].url}} alt="Album Cover" width="200" height="200">
+    <img ng-src={{$ctrl.album.images[0].url}} alt="Album Cover">
   </div>
   <div class="albums__list__item__info">
-    <div class="artist">
-      <span class="artist__info">{{$ctrl.album.artists[0].name}}</span>
-    </div>
-    <div class="album">
-      <span class="album__info">{{$ctrl.album.name}}</span>
-    </div>
+    <span class="artist">{{$ctrl.album.artists[0].name}}</span>
+    <span class="album">{{$ctrl.album.name}}</span>
     <div class="spotify">
       <a ng-href={{$ctrl.album.external_urls.spotify}} target="_blank">
-        <span class="volume-icon"><i class="fa fa-volume-up"></i></span>
+        <span class="icon"><i class="fa fa-volume-up"></i></span>
       </a>
       <span class="text">Listen on Spotify</span>
     </div>
   </div>
   <div class="albums__list__item__controls">
-    <div class="button-container button-container--comments" ng-if="!$ctrl.isWatchingComment">
-      <button ng-click="$ctrl.switchComment()">VIEW COMMENTS</button>
-    </div>
-    <div class="button-container button-container--back" ng-if="$ctrl.isWatchingComment">
-      <span class="back-icon"><i class="fa fa-angle-left"></i></span>
-      <button ng-click="$ctrl.switchComment()">BACK TO SEARCH</button>
-    </div>
+    <button class="comments" ng-if="!$ctrl.isWatchingComment" ng-click="$ctrl.switchComment()">
+      <span class="text">VIEW COMMENTS</span>
+    </button>
+    <button class="back" ng-if="$ctrl.isWatchingComment" ng-click="$ctrl.switchComment()">
+      <span class="icon"><i class="fa fa-angle-left"></i></span>
+      <span class="text">BACK TO SEARCH</span>
+    </button>      
   </div>
 </div>
 <comments album-id="$ctrl.album.id" ng-if="$ctrl.isWatchingComment"></comments>

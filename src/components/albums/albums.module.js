@@ -1,11 +1,12 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import { AlbumsListModule} from './albums-list/albums-list.module.js';
+import { AlbumsSearchModule} from './albums-search/albums-search.module.js';
 import { AlbumsComponent } from './albums.component.js';
 import { AlbumsService } from './albums.service.js';
 
 export const AlbumsModule = angular
-  .module('albums.module', [uiRouter, AlbumsListModule])
+  .module('albums.module', [uiRouter, AlbumsListModule, AlbumsSearchModule])
   .component('albums', AlbumsComponent)
   .service('AlbumsService', AlbumsService)
   .config(($stateProvider) => {

@@ -1,5 +1,6 @@
 import template from './albums.html';
 import { AlbumsListComponent} from './albums-list/albums-list.component.js';
+import { AlbumsSearchComponent} from './albums-search/albums-search.component.js';
 
 export const AlbumsComponent = {
   template,
@@ -9,10 +10,9 @@ export const AlbumsComponent = {
       console.log('ALBUMS-COMPONENT: constructor');
       'ngInject';
       this.albumsService = AlbumsService;
-      this.albumToSearch = '';
+      this.albumToSearch = 'rata';
       this.albums = [];
-      this.albumsTotal = 0;
-      this.albumsLimit = 0;
+      this.search();
     }
     
     $onInit() {
@@ -24,8 +24,6 @@ export const AlbumsComponent = {
       this.albumsService.getAlbums(this.albumToSearch).then((response) => {
         console.log('RESPONSE:', response);
         this.albums = response.albums.items;
-        this.albumsTotal = response.albums.total;
-        this.albumsLimit = response.albums.limit;
       }); 
     }
   }

@@ -38,9 +38,9 @@
 
   &__info {
     display: flex;
-    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
+    flex-wrap: wrap;
     width: 100%;
     height: 118px;
     padding: 9px 15px;
@@ -58,15 +58,12 @@
       height: 17px;
       white-space: nowrap;  
       overflow: hidden;
-      text-overflow: ellipsis; 
-      
-      &__info {
-        text-transform: uppercase;
-        font-size: 12px;
-        letter-spacing: 0.5px;
-        text-align: left;
-        color: $light-gray;
-      }
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-align: left;
+      color: $light-gray;
     }
 
     .album {
@@ -75,17 +72,14 @@
       white-space: nowrap;  
       overflow: hidden;
       text-overflow: ellipsis;
+      font-size: 25px;
+      line-height: 1.5;
+      text-align: left;
+      color: $white;
 
-      &__info { 
+      @media only screen and (min-width: 1024px) {
         font-size: 30px;
-        line-height: 1.5;
-        text-align: left;
-        color: $white;
-
-        @media only screen and (min-width: 1024px) {
-          font-size: 40px;
-          line-height: 1;
-        }
+        line-height: 1;
       }
     }
 
@@ -114,7 +108,7 @@
           border: solid 1px $white;
         }
 
-        .volume-icon {
+        .icon {
           width: 16px;
           height: 16px;
 
@@ -130,49 +124,6 @@
         letter-spacing: 0.2px;
         text-align: left;
         color: $shamrock-green;
-      }
-
-      &__image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 30px;
-        height: 30px;
-        margin-right: 14px;
-        border-radius: 30px;
-        background-color: $gray;
-
-        @media only screen and (min-width: 1024px) {
-          border: solid 1px $white;
-        }
-
-        .volume-icon {
-          width: 16px;
-          height: 16px;
-
-          .fa-volume-up {
-            font-size: 16px;
-            color: $white;
-          }
-        }
-      }
-
-      &__link {
-        height: 30px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-
-        a {
-          font-size: 13px;
-          letter-spacing: 0.2px;
-          text-align: left;
-          color: $shamrock-green;
-        }
-
-        a:link, a:visited, a:hover, a:active {
-          text-decoration: none;
-        }
       }
     }
   }
@@ -192,62 +143,44 @@
       height: 180px;
     }
 
-    .button-container {
+    button {
       display: flex;
+      justify-content: center;
       align-items: center;
       width: 160px;
       height: 30px;
       margin: 0;
       border: solid 1px $shamrock-green;
-      border-radius: 40px;
-      padding: 0;
+      border-radius: 30px;
+      padding: 0 12px;
       background-color: $hard-gray;
+      cursor: pointer;
 
       @media only screen and (min-width: 1024px) {
         margin: 0 30px 20px 0;
-        padding: 0 5px;
       }
 
-      button {
-        height: 100%;
-        border: none;
-        background: none;
-        padding: 0;
-        color: $white;
-        font-size: 12px;
-        cursor: pointer;
-      }
+      &.comments, &.back {
 
-      &--comments {
-        justify-content: center;
-
-        button {
-          width: 100%;
+        .text {
+          font-size: 12px;
+          color: $white;          
         }
       }
 
-      &--back {
+      &.back {
         justify-content: flex-start;
 
-        .back-icon {
-          position: relative;
-          width: 15px;
-          height: 24px;
+        .icon {
+          width: 22px;
+          height: 22px;
 
           .fa-angle-left {
-            position: absolute;
-            left: 7px;
             font-size: 22px;
             color: $white;
           }
         }
-
-        button {
-          width: 85%;
-        }
       }
-
-      
     }
   }
 }
