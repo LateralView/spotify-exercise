@@ -9,12 +9,11 @@ export const AlbumsComponent = {
     constructor(AlbumsService) {
       'ngInject';
       this.albumsService = AlbumsService;
-      this.albumToSearch = '';
       this.albums = [];
     }
 
-    search() {
-      this.albumsService.getAlbums(this.albumToSearch).then((response) => {
+    search({ albumToSearch }) {
+      this.albumsService.getAlbums(albumToSearch).then((response) => {
         this.albums = response.albums.items;
       }); 
     }

@@ -6,9 +6,17 @@ export const AlbumsSearchComponent = {
   },
   template,
   controller: class AlbumsSearchComponent {
+
+    constructor() {
+      this.albumToSearch = '';
+    }
     
     search() {
-      this.onSearch();
+      this.onSearch({
+        $event: {
+          albumToSearch: this.albumToSearch
+        }
+      });
     }
   }
 };

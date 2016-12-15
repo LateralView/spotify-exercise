@@ -1,4 +1,4 @@
 <div class="albums">
-  <albums-search on-search="$ctrl.search();"></albums-search>
+  <albums-search on-search="$ctrl.search($event);"></albums-search>
   <albums-list albums="$ctrl.albums"></albums-list>
 </div>
