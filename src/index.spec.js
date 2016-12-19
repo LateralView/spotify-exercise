@@ -10,9 +10,9 @@ chai.use(chaiAsPromised);
 describe('App Default Route Test', function() {
   beforeEach(angular.mock.module('spotifyzier'));
 
-  it('Should set "/" as default route', angular.mock.inject(function($rootScope, $location) {
+  it('should set "/albums" as default route', angular.mock.inject(function($rootScope, $location) {
     $location.path('/a/invalid-route');
     $rootScope.$apply();
-    chai.expect($location.path()).to.equal('/');
+    chai.expect($location.path()).to.equal('/albums');
   }));
 });
