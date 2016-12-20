@@ -19,8 +19,8 @@ export class HeaderSearch {
       } 
     };
     $element.on('keyup', handler);
-    $scope.$on('destroy', function(){
-      $element.off('keyup', handler)
+    $scope.$on('destroy', () => {
+      $element.off('keyup', handler);
     });
   }
 };

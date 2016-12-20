@@ -21,7 +21,7 @@ export const AlbumsComponent = {
 	  	this.AlbumsService.getAlbums(this.albums)
 	  	.then((responce) => {
 	  		this.data = this.get(responce, "albums", {}).items || [];
-	  	})
+	  	});
 	  }
 
 	  viewComments(albumId) {

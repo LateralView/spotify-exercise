@@ -14,17 +14,43 @@ describe('Component: Albums', function () {
  
   var element;
   var scope;
-  beforeEach(inject(function($rootScope, $compile){
+  var controller;
+  beforeEach(inject(function($rootScope, $compile, $httpBackend){
     scope = $rootScope.$new();
 
     scope.albums = 'Creep';
     element = angular.element('<albums albums="albums"></albums>');
     element = $compile(element)(scope);
-    scope.$apply();
+    controller = element.controller('albums');
+    controller.data = [{ id: 123456 }];
+    scope.$digest();
   }));
  
   it('should render the albums', function() {
     var component = element[0];
     chai.expect(component.firstChild.id).to.equal('albums');
-  }); 
+  });
+ 
+  it('should call getAlbums(query) method with params', angular.mock.inject(function($httpBackend) {
+    $httpBackend.expectGET('/search?q=Testeo').respond([]);
+
+    element.controller('albums').AlbumsService.getAlbums('Testeo')
+      .then(function(response) {
+        chai.expect(response).to.equal([]);
+        done();
+      })
+      .catch(function(error) {
+        done(error);
+      });
+
+    $httpBackend.flush();
+  }));
+ 
+  it('should call viewComments and go to that view', angular.mock.inject(function($rootScope, $state) {
+    $state.go = sinon.spy();
+    var component = element[0];
+    var btnViewComments = component.getElementsByClassName('btnViewComments')[0];
+    angular.element(btnViewComments).triggerHandler('click');
+    chai.expect($state.go).calledWith('album', { albumId: 123456 });
+  }));
 });

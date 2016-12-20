@@ -8,7 +8,7 @@ import chaiAsPromised from 'chai-as-promised';
 chai.use(sinonChai);
 chai.use(chaiAsPromised);
 
-describe('Component: Header', function () {
+describe('Common: Header', function () {
   beforeEach(angular.mock.module('header'));
   beforeEach(angular.mock.module('ui.router'));
  
@@ -43,5 +43,10 @@ describe('Component: Header', function () {
 
     chai.expect(input.value).to.equal('');
   });
+
+  it('test on destroy keyup unbind', function(){
+    var scope = element.find('input').scope();
+    scope.$destroy();
+  })
  
 });

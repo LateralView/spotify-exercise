@@ -5,6 +5,8 @@ export class AlbumsService {
   }
   
   getAlbums(query) {
-    return this.$http.get(`/search?q=${query}`).then(response => response.data);
+    return this.$http.get(`/search?q=${query}`)
+    		.then(response => response.data)
+    		.catch(error => { throw error });
   }
 }

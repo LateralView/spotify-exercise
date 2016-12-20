@@ -21,4 +21,10 @@ describe('App Routes Testing', function() {
     $rootScope.$apply();
     chai.expect($location.path()).to.equal('/albums/test');
   }));
+
+  it('Should set "/album" and navigate to route', angular.mock.inject(function($rootScope, $location) {
+    $location.path('/album/4MGDnutWZLdTCP3nmT1tgu');
+    $rootScope.$apply();
+    chai.expect($location.path()).to.equal('/album/4MGDnutWZLdTCP3nmT1tgu');
+  }));
 });
