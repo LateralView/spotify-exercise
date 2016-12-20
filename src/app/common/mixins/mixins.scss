@@ -1,0 +1,45 @@
+@import '../common';
+
+@mixin form-control() {
+  display: block;
+  width: 100%;
+  height: 16px;
+  padding: 5px 12px 4px;
+  font-size: 14px;
+  line-height: 19px;
+  color: #3e3e40;
+  vertical-align: middle;
+  background-color: #dfe0e6;
+  background-image: none;
+  border: 1px solid #dfe0e6;
+  border-radius: 13px;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+  outline: none;
+  margin-left: -26px;
+}
+
+@mixin custom-button() {
+  border: 0px;
+  background: $background-button-color;
+  color: $font-color-button;
+  border-radius: 500px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 400;
+  width: 28px;
+  height: 28px;
+  letter-spacing: 1.5px;
+  line-height: 26px;
+  padding: 0 7px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+  float: left;
+  outline: none;
+}

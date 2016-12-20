@@ -7,12 +7,18 @@ import chaiAsPromised from 'chai-as-promised';
 chai.use(sinonChai);
 chai.use(chaiAsPromised);
 
-describe('App Default Route Test', function() {
+describe('App Routes Testing', function() {
   beforeEach(angular.mock.module('spotifyzier'));
 
   it('Should set "/" as default route', angular.mock.inject(function($rootScope, $location) {
     $location.path('/a/invalid-route');
     $rootScope.$apply();
     chai.expect($location.path()).to.equal('/');
+  }));
+
+  it('Should set "/albums" and navigate to route', angular.mock.inject(function($rootScope, $location) {
+    $location.path('/albums/test');
+    $rootScope.$apply();
+    chai.expect($location.path()).to.equal('/albums/test');
   }));
 });

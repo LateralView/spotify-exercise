@@ -1,0 +1,24 @@
+@import url("common/fonts/open-sans");
+@import './common/common';
+
+body {
+	&.ng-scope {
+		overflow: hidden;
+	  background: $background-body-color;
+	}
+
+  section {
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+  }
+
+  .home {
+    width: 75%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: $background-home-color;
+	}
+}

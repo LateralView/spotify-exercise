@@ -1,0 +1,91 @@
+<div id="album-details">
+  <div class="content__wrapper">
+    <div class="album__item">
+	    <div class="album__item__img">
+	    	<img src="{{album.data.images[1].url}}" alt="">
+	  	</div>
+	    <div class="album__item__description">
+		    <div class="album__item__description__top__info">
+		    	<p>{{album.data.artists[0].name}}</p>
+		    	<h2>{{album.data.name}}</h2>
+		  	</div>
+		    <div class="album__item__description__bottom__info">
+		    	<div class="subcontainer right">
+		    		<button class="button">
+						  <i class="fa fa-volume-up" aria-hidden="true"></i>
+						</button>
+		    		<button class="button listen">
+						  <div class="text">Listen on Spotify</div>
+						</button>
+		    	</div>
+
+		    	<div class="subcontainer left">
+		    		<button class="button btnBack" ng-click="album.goBack()">
+						  <div class="comments">
+						  	<i class="fa fa-chevron-left" aria-hidden="true"></i>
+						  	Back to search
+						  </div>
+						</button>
+		    	</div>
+		  	</div>
+	  	</div>
+  	</div>
+
+	  <div class="add__comments">
+		  <div class="subcontainer left">
+		  	<h2>Comments</h2>
+		  </div>
+		  <div class="subcontainer right">
+    		<button class="button" ng-click="album.addComment()">
+				  <i ng-if="!album.commenting" class="fa fa-plus" aria-hidden="true"></i>
+				  <i ng-if="album.commenting" class="fa fa-times" aria-hidden="true"></i>
+				</button>
+    		<button class="button add toogleAdd" ng-click="album.addComment()" ng-if="!album.commenting">
+				  <div class="text">Add comment</div>
+				</button>
+    	</div>
+	  </div>
+
+		<div class="add__comments__form" ng-if="album.commenting">
+			  <div class="add__comments__form__img">
+			  	<div class="img"></div>
+			  </div>
+			  <div class="add__comments__form__description">
+			  	<form action="#" method="post" onsubmit="return false;">
+			      <input type="text"
+			      			 name="email"
+			      			 class="form__control email"
+			      			 placeholder="e-mail"></input>
+			      <textarea type="text"
+			      					name="comment"
+					      			class="form__control comment"
+					      			placeholder="Write your comment"></textarea>
+
+						<button class="button saveComment" ng-click="album.postComment($event)">
+						  <div class="add">
+						  	Add
+						  </div>
+						</button>
+			    </form>
+			  </div>
+	  </div>
+
+		<div class="comments__container">
+		  <div class="comment__item" ng-repeat="comment in album.comments">
+			  <div class="comment__item__img">
+			  	<img src="{{comment.avatar}}" alt="">
+			  </div>
+			  <div class="comment__item__description">
+			  	<p class="email">{{comment.email}}</p>
+			  	<p class="comment">{{comment.text}}</p>
+			  </div>
+		  </div>
+	  </div>
+
+		<button class="button__more__comments" ng-show="album.comments.length && !album.commenting">
+		  <div class="show__more">
+		  	Show more comments
+		  </div>
+		</button>
+  </div>
+</div>

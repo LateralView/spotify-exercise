@@ -84,7 +84,7 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('frontend:watch', function() {
-  gulp.watch(watch, ['minify-styles', 'lint', 'webpack']);
+  gulp.watch(watch, ['minify-styles', /*'lint',*/ 'webpack']);
 });
 
 gulp.task('frontend:build', ['minify-styles', 'webpack']);
