@@ -47,3 +47,11 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  #header {
+    .input__wrapper {
+      width: calc(100% - 80px);
+    }
+  }
+}

@@ -210,7 +210,7 @@
         width: auto;
         padding: 0 20px;
         float: right;
-        margin-top: 5px;
+        margin-top: 6px;
 
         .add {
           position: relative;
@@ -278,6 +278,7 @@
     width: auto;
     float: right;
     margin-top: 10px;
+    padding: 0 20px;
 
     .show__more {
       font-size: 10px;
@@ -301,5 +302,116 @@
   *:-ms-input-placeholder {
     /* IE 10+ */
     color: $border-button-color;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #album-details {
+    padding-top: 10px;
+
+    .content__wrapper {
+      width: calc(100% - 20px);
+
+      .album__item {
+        height: 370px;
+
+        &__img {
+          width: 100%;
+          display: block;
+          margin: 10px auto;
+          background: transparent;
+
+          img {
+            margin: 0 auto;
+            display: block;
+            background: $background-album-img-color;
+          }
+        }
+
+        &__description {
+          padding: 10px 20px;
+          width: calc(100% - 40px);
+
+          &__bottom__info {
+
+            .subcontainer {
+
+              &.right {
+                width: 100%;
+              }
+
+              &.left {
+                width: 100%;
+
+                button.btnBack {
+                  display: block;
+                  margin: 0 auto;
+                  margin-top: 25px;
+                  float: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .add__comments {
+        margin-top: 10px;
+
+        button.add.toogleAdd {
+          display: none;
+        }
+
+        .subcontainer.right {
+          button {
+            margin: 0px !important;
+          }
+        }
+
+        &__form {
+          &__img {
+            width: 51px;
+            height: 50px;
+
+            .img {
+              width: 30px;
+              height: 30px;
+              margin: 12px 0 0 15px;
+            }
+          }
+
+          &__description {
+            width: calc(100% - 51px - 25px);
+            padding: 15px 15px 10px 10px;
+
+            button.btnSaveComment {
+              display: block;
+              margin: 0 auto;
+              margin-top: 6px;
+              float: none;
+            }
+
+            .add-action-container {
+              margin-left: -44px;
+            }
+
+            .form__control {
+
+              &.comment {
+                margin-left: -46px;
+                width: calc(100% + 20px)
+              }
+            }
+          }
+        }
+      }
+
+      .button__more__comments {
+        display: block;
+        margin: 0 auto;
+        margin-top: 15px;
+        float: none;
+      }
+    }
   }
 }

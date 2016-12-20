@@ -22,3 +22,12 @@ body {
     background-color: $background-home-color;
 	}
 }
+
+@media screen and (max-width: 768px) {
+  body {
+    .home {
+      width: calc(100% - 20px);
+      margin-top: 10px;
+    }
+  }
+}
