@@ -1,15 +1,20 @@
 export class AlbumsService {
-  constructor($http) {
+  constructor($q, $http) {
     'ngInject;'
+    this.$q = $q;
     this.$http = $http;
+    this.baseUrl = '/search?q=';
   }
   
   getAlbums(albumName) {
     let finalAlbumName = albumName.replace(/ /g, '+');
-    let query = '/search?q=' + finalAlbumName;
-    return this.$http({
-      method: 'GET',
-      url: query
-    }).then(response => response.data);
+    let queryUrl = this.baseUrl + finalAlbumName;
+    let deferred = this.$q.defer();
+
+    this.$http.get(queryUrl)
+      .success((response) => deferred.resolve(response)) 
+      .error((response) => deferred.reject(response));
+
+    return deferred.promise;
   }
 }

@@ -13,9 +13,8 @@ export const AlbumsComponent = {
     }
 
     search({ albumToSearch }) {
-      this.albumsService.getAlbums(albumToSearch).then((response) => {
-        this.albums = response.albums.items;
-      }); 
+      this.albumsService.getAlbums(albumToSearch)
+        .then((response) => this.albums = response.albums.items);
     }
   }
 };

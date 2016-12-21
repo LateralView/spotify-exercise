@@ -21,9 +21,8 @@ export const CommentsComponent = {
     }
     
     loadComments() { 
-      this.commentsService.getComments(this.albumId).then((response) => {
-        this.comments = response;
-      }); 
+      this.commentsService.getComments(this.albumId)
+        .then((response) => this.comments = response);
     }
 
     startAddingComment() {
@@ -37,8 +36,8 @@ export const CommentsComponent = {
     finishAddingComment({ comment }) {
       let newComment = Object.assign({ albumId: this.albumId }, comment);
       this.isAddingComment = false;
-      this.commentsService.putComment(newComment);
-      this.loadComments();
+      this.commentsService.putComment(newComment)
+        .then((response) => this.loadComments());
     }
   }
 };
