@@ -7,7 +7,7 @@
 	    <div class="album__item__description">
 		    <div class="album__item__description__top__info">
 		    	<p>{{album.artists[0].name}}</p>
-		    	<h2>{{album.name}}</h2>
+		    	<h2>{{album.name | limitTo: 65 }}</h2>
 		  	</div>
 		    <div class="album__item__description__bottom__info">
 		    	<div class="subcontainer right">

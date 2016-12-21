@@ -282,7 +282,7 @@
 
     .show__more {
       font-size: 10px;
-      color: $font-color-button-listen;
+      color: $font-color-button-more;
     }
   }
 
@@ -410,6 +410,7 @@
         display: block;
         margin: 0 auto;
         margin-top: 15px;
+        margin-bottom: 30px;
         float: none;
       }
     }
