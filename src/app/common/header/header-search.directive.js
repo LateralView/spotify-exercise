@@ -6,9 +6,9 @@ export class HeaderSearch {
     this.restrict = 'A';
     this.scope = {
       fetchSearch: '&'
-    }
+    };
   }
-  link($scope, $element, $event) {
+  link($scope, $element) {
     const limit = 4;
     const handler = ($event) => {
       const search = angular.element($event.target).val();
@@ -23,4 +23,4 @@ export class HeaderSearch {
       $element.off('keyup', handler);
     });
   }
-};
+}

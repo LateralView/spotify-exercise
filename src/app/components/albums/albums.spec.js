@@ -8,14 +8,14 @@ import chaiAsPromised from 'chai-as-promised';
 chai.use(sinonChai);
 chai.use(chaiAsPromised);
 
-describe('Component: Albums', function () {
+describe('Component: Albums', function (done) {
   beforeEach(angular.mock.module('albums'));
-  beforeEach(angular.mock.module('ui.router'));
+  beforeEach(angular.mock.module(uiRouter));
  
   var element;
   var scope;
   var controller;
-  beforeEach(inject(function($rootScope, $compile, $httpBackend){
+  beforeEach(angular.mock.inject(function($rootScope, $compile){
     scope = $rootScope.$new();
 
     scope.albums = 'Creep';

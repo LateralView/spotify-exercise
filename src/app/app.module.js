@@ -7,9 +7,9 @@ import 'font-awesome/css/font-awesome.css';
 import './app.scss';
 
 export const AppModule = angular
-.module('app', [
-		CommonModule,
-		ComponentsModule
-	])
+  .module('app', [
+    CommonModule,
+    ComponentsModule
+  ])
   .component('app', AppComponent)
   .name;

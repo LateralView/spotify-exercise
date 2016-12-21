@@ -5,18 +5,18 @@ export const HeaderComponent = {
   controllerAs: 'header',
   bindings: {},
   controller: class HeaderController {
-	  constructor($state) {
-	    'ngInject';
-	    this.name = 'header';
-	    this.$state = $state;
-	  }
+    constructor($state) {
+      'ngInject';
+      this.name = 'header';
+      this.$state = $state;
+    }
 
     fetchSearch(search) {
-    	if (search) {
-      	this.$state.go('albums', { query: search });
+      if (search) {
+        this.$state.go('albums', { query: search });
       } else {
-      	this.$state.go('root');
+        this.$state.go('root');
       }
     }
-	}
+  }
 };

@@ -16,6 +16,7 @@ const watch = 'src/**/*';
 const mainSass = 'src/*.scss';
 const mainJs = 'src/index.js';
 const webpackFile = './webpack.config.js';
+const webpackFileDebug = './webpack.config.debug.js';
 
 gulp.task('pre-test', () => {
   return gulp.src(['modules/!(*.spec)+(.js)' ,'modules/**/!(*.spec)+(.js)'])
@@ -78,13 +79,23 @@ gulp.task('webpack', function() {
     .pipe(gulp.dest(dest));
 });
 
+gulp.task('webpack-debug', function() {
+  return gulp.src(mainJs)
+    .pipe(webpack(require(webpackFileDebug)))
+    .pipe(gulp.dest(dest));
+});
+
 gulp.task('browser-sync', function() {
   liteServer.defaults.files = [ dest + '*.*'];
   liteServer.server();
 });
 
 gulp.task('frontend:watch', function() {
-  gulp.watch(watch, ['minify-styles', /*'lint',*/ 'webpack']);
+  gulp.watch(watch, ['minify-styles', 'lint', 'webpack']);
+});
+
+gulp.task('frontend:watch:debug', function() {
+  gulp.watch(watch, ['minify-styles', /*'lint',*/ 'webpack-debug']);
 });
 
 gulp.task('frontend:build', ['minify-styles', 'webpack']);

@@ -8,6 +8,6 @@ export const AlbumDetailsModule = angular
   .component('albumDetails', AlbumDetailsComponent)
   .service('AlbumDetailsService', AlbumDetailsService)
   .config(($qProvider) => {
-		$qProvider.errorOnUnhandledRejections(false);
-	})
-	.name;
+    $qProvider.errorOnUnhandledRejections(false);
+  })
+  .name;

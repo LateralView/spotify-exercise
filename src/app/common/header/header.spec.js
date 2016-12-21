@@ -1,20 +1,21 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import chai from 'chai';
-import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import chaiAsPromised from 'chai-as-promised';
+import noop from 'lodash/noop';
 
 chai.use(sinonChai);
 chai.use(chaiAsPromised);
 
 describe('Common: Header', function () {
   beforeEach(angular.mock.module('header'));
-  beforeEach(angular.mock.module('ui.router'));
+  beforeEach(angular.mock.module(uiRouter));
  
   var element;
   var scope;
-  beforeEach(inject(function($rootScope, $compile, $state){
+  beforeEach(angular.mock.inject(function($rootScope, $compile, $window){
+    $window['ui-router-visualizer'] = { visualizer: noop };
     scope = $rootScope.$new();
     element = angular.element('<header></header>');
     element = $compile(element)(scope);
@@ -47,6 +48,5 @@ describe('Common: Header', function () {
   it('test on destroy keyup unbind', function(){
     var scope = element.find('input').scope();
     scope.$destroy();
-  })
- 
+  });
 });
