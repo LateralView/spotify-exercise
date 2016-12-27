@@ -1,6 +1,8 @@
 class AlbumItemComponent {
-  constructor() {
-    'ngInject';
+  doViewComments() {
+    this.viewComments({
+      $event: { album: this.album }
+    });
   }
 }
 

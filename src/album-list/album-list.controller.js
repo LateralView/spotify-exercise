@@ -10,10 +10,14 @@ class AlbumListComponent {
   }
 
   doSearch(event) {
-    this.AlbumListService.getByName(event.search)
+    this.AlbumListService.getAlbumsByName(event.search)
     .then((response) => {
       this.albums = response.data.albums.items;
     });
+  }
+
+  viewComments(event) {
+    this.AlbumListService.getCommentsInAlbum(event.album.id);
   }
 }
 

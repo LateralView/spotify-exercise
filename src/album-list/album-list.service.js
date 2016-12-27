@@ -5,10 +5,14 @@ class AlbumListService {
     this.$http = $http;
   }
 
-  getByName(name) {
+  getAlbumsByName(name) {
     return this.$http.get('/search', {
       params: {q: name}
     });
+  }
+
+  getCommentsInAlbum(albumId) {
+    return this.$http.get('/comments/' + albumId);
   }
 }
 
