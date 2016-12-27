@@ -20,5 +20,5 @@ RUN npm install
 COPY . /usr/src/app
 
 # Run application
-CMD ["npm", "build"]
+RUN npm build
 CMD ["npm", "start"]
