@@ -4,6 +4,7 @@
   <h2>{{ $ctrl.album.name }}</h2>
   <footer class="album-footer">
     <span>Listen on Spotify</span>
-    <button ng-click="$ctrl.doViewComments()">View comments</button>
+    <button ng-click="$ctrl.doViewComments()" ng-hide="$ctrl.album.isCommentEnabled">View comments</button>
+    <button ng-click="$ctrl.album.isCommentEnabled = false" ng-show="$ctrl.album.isCommentEnabled">Back to search</button>
   </footer>
 </div>
