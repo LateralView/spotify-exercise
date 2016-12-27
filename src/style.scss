@@ -1,10 +1,14 @@
 // Import from npm
 @import 'normalize.css';
 
-$background-color: #fff;
+// Import from project
+@import './album-list/album-list';
+
+$background-color: #282828;
 
 body {
   background: $background-color;
+  color: #ffffff;
 
   section {
     height: 100vh;

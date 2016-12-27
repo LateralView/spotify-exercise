@@ -1,0 +1,8 @@
+<section>
+  <div>
+    <search-bar do-search="$ctrl.doSearch($event)"></search-bar>
+  </div>
+  <article class="album-list-container" ng-repeat="album in $ctrl.albums">
+    <album-item album="album"></album-item>
+  </article>
+</section>

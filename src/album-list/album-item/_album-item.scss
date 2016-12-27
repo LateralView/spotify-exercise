@@ -1,0 +1,24 @@
+album-item {
+  display: flex;
+  height: 200px;
+
+  background: gray;
+
+  img {
+    width: 200px;
+  }
+
+  .album-details {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 0 25px;
+
+    .album-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
