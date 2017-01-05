@@ -29,8 +29,7 @@ The technology used on the frontend side should be:
 1. Install [Mongodb](https://www.mongodb.com/) on your machine, run in with the command `mongod`.
 2. Install [Node.js](https://nodejs.org/) and run `npm install` on the project folder.
 3. Run `npm install -g gulp` and `gulp build` on the root project folder to generate the backend documentation.
-4. Go to the *Public/* folder and run `gulp build` to generate the basic frontend build.
-5. On the core project folder, just run `npm start` to start the application open your browser pointing to `http://localhost:3000`.
+4. On the core project folder, just run `npm start` to start the application open your browser pointing to `http://localhost:3000`.
 
 ### Backend documentation
 When you run the application, you can open the documentation hitting the `/docs` endpoint, also, if you want to see more about the response of the search you will need to review the [Spotify API](https://developer.spotify.com/web-api/search-item/).
