@@ -4,17 +4,17 @@ services:
   db:
     image: mongo
     ports:
-      - "27017:27017"
+      - "27017"
   app:
     build: .
     ports:
-      - "3000:3000"
+      - "${APP_PORT}:${APP_PORT}"
     volumes:
       - ./src:/usr/src/app/src
       - ./doc:/usr/src/app/doc
       - ./dist:/usr/src/app/dist
     environment:
-      APP_PORT: "3000"
+      APP_PORT: "${APP_PORT}"
       DB_URL: "mongodb://db:27017/spotifyzier"
     links:
       - "db"
