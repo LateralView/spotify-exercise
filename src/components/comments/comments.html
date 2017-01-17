@@ -1,0 +1,5 @@
+<div class="comments">
+  <comments-header adding-comment="$ctrl.isAddingComment" on-start-adding-comment="$ctrl.startAddingComment();" on-cancel-adding-comment="$ctrl.cancelAddingComment();"></comments-header>
+  <comments-form on-finish-adding-comment="$ctrl.finishAddingComment($event);" ng-if="$ctrl.isAddingComment"></comments-form>
+  <comments-list comments="$ctrl.comments"></comments-list>
+</div>

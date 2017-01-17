@@ -1,0 +1,186 @@
+.albums__list__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 14px;
+  width: 100%;
+  background-color: #ffffff;
+
+  @media only screen and (min-width: 1024px) {
+    flex-direction: row;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 153px;
+    background-color: $gray;
+
+    @media only screen and (min-width: 1024px) {
+      width: 180px;
+      height: 180px;
+    }
+
+    img {
+      width: 132px;
+      height: 132px;
+
+      @media only screen and (min-width: 1024px) {
+        width: 180px;
+        height: 180px;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 118px;
+    padding: 9px 15px;
+    background-color: $hard-gray;
+
+    @media only screen and (min-width: 1024px) {
+      width: 576px;
+      height: 180px;
+      padding: 20px 0 20px 30px;
+      background-color: $gray;
+    }
+
+    .artist {
+      width: 100%;
+      height: 17px;
+      white-space: nowrap;  
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-align: left;
+      color: $light-gray;
+    }
+
+    .album {
+      width: 100%;
+      height: 46px;
+      white-space: nowrap;  
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 25px;
+      line-height: 1.5;
+      text-align: left;
+      color: $white;
+
+      @media only screen and (min-width: 1024px) {
+        font-size: 30px;
+        line-height: 1;
+      }
+    }
+
+    .spotify {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      height: 37px;
+
+      @media only screen and (min-width: 1024px) {
+        align-self: flex-end;
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        margin-right: 14px;
+        border-radius: 30px;
+        background-color: $gray;
+
+        @media only screen and (min-width: 1024px) {
+          border: solid 1px $white;
+        }
+
+        .icon {
+          width: 16px;
+          height: 16px;
+
+          .fa-volume-up {
+            font-size: 16px;
+            color: $white;
+          }
+        }
+      }
+
+      .text {
+        font-size: 13px;
+        letter-spacing: 0.2px;
+        text-align: left;
+        color: $shamrock-green;
+      }
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 66px;
+    background-color: $gray;
+
+    @media only screen and (min-width: 1024px) {
+      justify-content: flex-end;
+      align-items: flex-end;
+      width: 200px;
+      height: 180px;
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 160px;
+      height: 30px;
+      margin: 0;
+      border: solid 1px $shamrock-green;
+      border-radius: 30px;
+      padding: 0 12px;
+      background-color: $hard-gray;
+      cursor: pointer;
+
+      @media only screen and (min-width: 1024px) {
+        margin: 0 30px 20px 0;
+      }
+
+      &.comments, &.back {
+
+        .text {
+          font-size: 12px;
+          color: $white;          
+        }
+      }
+
+      &.back {
+        justify-content: flex-start;
+
+        .icon {
+          width: 22px;
+          height: 22px;
+
+          .fa-angle-left {
+            font-size: 22px;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

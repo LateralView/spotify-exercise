@@ -1,14 +1,15 @@
 // Import from npm
 @import 'normalize.css';
-
-$background-color: #fff;
-
-body {
-  background: $background-color;
-
-  section {
-    height: 100vh;
-    position: relative;
-    width: 100vw;
-  }
-}
+// Common
+@import 'common/colors';
+@import 'common/base';
+// Components
+@import 'components/albums/albums';
+@import 'components/albums/albums-search/albums-search';
+@import 'components/albums/albums-list/albums-list';
+@import 'components/albums/albums-list/albums-list-item/albums-list-item';
+@import 'components/comments/comments';
+@import 'components/comments/comments-header/comments-header';
+@import 'components/comments/comments-form/comments-form';
+@import 'components/comments/comments-list/comments-list';
+@import 'components/comments/comments-list/comments-list-item/comments-list-item';

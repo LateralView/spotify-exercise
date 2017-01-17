@@ -1,0 +1,14 @@
+<div class="comments__header">
+  <div class="comments__header__title">
+    <span class="comments__header__title__text">COMMENTS</span>
+  </div>
+  <div class="comments__header__controls">
+    <div class="comments__header__controls__add" ng-if="!$ctrl.addingComment">
+      <span class="text">Add comment</span>
+      <button ng-click="$ctrl.startAdding();"><span class="plus-icon"><i class="fa fa-plus"></i></span></button>
+    </div>
+    <div class="comments__header__controls__close" ng-if="$ctrl.addingComment">
+      <button ng-click="$ctrl.cancelAdding();"><span class="close-icon"><i class="fa fa-times"></i></span></button>
+    </div>
+  </div>
+</div>

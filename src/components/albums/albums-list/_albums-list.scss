@@ -1,0 +1,13 @@
+.albums__list {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1004px;
+  padding: 12px;
+  padding-bottom: 0;
+  background-color: $black;
+
+  @media only screen and (min-width: 1024px) {
+    padding: 24px;
+    padding-bottom: 10px;
+  }
+}

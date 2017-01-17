@@ -1,0 +1,25 @@
+<div class="albums__list__item">
+  <div class="albums__list__item__image">
+    <img ng-src={{$ctrl.album.images[0].url}} alt="Album Cover">
+  </div>
+  <div class="albums__list__item__info">
+    <span class="artist">{{$ctrl.album.artists[0].name}}</span>
+    <span class="album">{{$ctrl.album.name}}</span>
+    <div class="spotify">
+      <a ng-href={{$ctrl.album.external_urls.spotify}} target="_blank">
+        <span class="icon"><i class="fa fa-volume-up"></i></span>
+      </a>
+      <span class="text">Listen on Spotify</span>
+    </div>
+  </div>
+  <div class="albums__list__item__controls">
+    <button class="comments" ng-if="!$ctrl.isWatchingComment" ng-click="$ctrl.switchComment()">
+      <span class="text">VIEW COMMENTS</span>
+    </button>
+    <button class="back" ng-if="$ctrl.isWatchingComment" ng-click="$ctrl.switchComment()">
+      <span class="icon"><i class="fa fa-angle-left"></i></span>
+      <span class="text">BACK TO SEARCH</span>
+    </button>      
+  </div>
+</div>
+<comments album-id="$ctrl.album.id" ng-if="$ctrl.isWatchingComment"></comments>
