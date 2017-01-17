@@ -1,0 +1,31 @@
+<div id="albums">
+  <div class="content__wrapper">
+    <div class="album__item" ng-repeat="album in albums.data">
+	    <div class="album__item__img">
+	    	<img src="{{album.images[1].url}}" alt="">
+	  	</div>
+	    <div class="album__item__description">
+		    <div class="album__item__description__top__info">
+		    	<p>{{album.artists[0].name}}</p>
+		    	<h2>{{album.name | limitTo: 65 }}</h2>
+		  	</div>
+		    <div class="album__item__description__bottom__info">
+		    	<div class="subcontainer right">
+		    		<button class="button">
+						  <i class="fa fa-volume-up" aria-hidden="true"></i>
+						</button>
+		    		<button class="button listen">
+						  <div class="text">Listen on Spotify</div>
+						</button>
+		    	</div>
+
+		    	<div class="subcontainer left">
+		    		<button class="button btnViewComments" ng-click="albums.viewComments(album.id)">
+						  <div class="comments">View comments</div>
+						</button>
+		    	</div>
+		  	</div>
+	  	</div>
+  	</div>
+  </div>
+</div>

@@ -1,0 +1,418 @@
+@import '../../common/common';
+@import '../../common/mixins/mixins';
+@import '../../common/fonts/fonts';
+
+#album-details {
+  width: 100%;
+  height: calc(100% - 50px);
+  padding-top: 20px;
+  overflow-y: auto; 
+  background-color: $background-transparent-color;
+
+  .content__wrapper {
+    width: 75%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+
+    .album__item {
+      width: 100%;
+      height: 150px;
+      margin-bottom: 10px;
+      background: $background-album-color;
+
+      &__img {
+        width: 150px;
+        height: 150px;
+        float: left;
+        background: $background-album-img-color;
+
+        img {
+          width: 150px;
+          height: 150px;
+          border: 0;
+        }
+      }
+
+      &__description {
+        width: calc(100% - 150px - 40px);
+        height: 110px;
+        float: left;
+        padding: 20px;
+
+        &__top__info {
+          width: 100%;
+          height: calc(100% - 28px);
+
+          p {
+            @include font-open-sans(12, 200);
+            margin: 0;
+            color: $font-color-top-info-p-light;
+            text-transform: uppercase;
+            min-height: 14px;
+          }
+
+          h2 {
+            @include font-open-sans(24, 200);
+            color: $font-color-top-info-h2;
+            margin: 5px 0;
+          }
+        }
+
+        &__bottom__info {
+          width: 100%;
+          height: 28px;
+
+          .subcontainer {
+            width: 50%;
+            height: 100%;
+            float: left;
+
+            &.right {
+
+              .button {
+                @include custom-button();
+
+                &.listen {
+                  width: auto;
+                  margin-left: 5px;
+                  background: transparent;
+
+                  .text {
+                    @include font-open-sans(10, 200);
+                    color: $font-color-button-listen;
+                  }
+                }
+              }
+            }
+
+            &.left {
+
+              .button {
+                @include custom-button();
+                border: 1px solid $border-button-color;
+                width: auto;
+                padding: 0 20px;
+                float: right;
+
+                .comments {
+                  position: relative;
+                  text-transform: uppercase;
+
+                  i {
+                    margin: 0 10px 0 -10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .add__comments {
+    width: 100%;
+    height: 28px;
+    margin-top: 20px;
+
+    .subcontainer {
+      width: 50%;
+      height: 100%;
+      float: left;
+
+      &.left {
+
+        h2 {
+          @include font-open-sans(12, 200);
+          color: $font-color-comments-title;
+          text-transform: uppercase;
+          line-height: 28px;
+          margin: 0;
+        }
+      }
+
+      &.right {
+
+        .button {
+          @include custom-button();
+          float: right;
+
+          &:not(.add) {
+            background-color: $background-button-add-color;
+            color: $font-color-button-add;
+            padding: 2px 9px;
+            margin-right: 10px;
+          }
+
+          &.add {
+            width: auto;
+            margin-left: 5px;
+            background: transparent;
+            text-transform: none;
+
+            .text {
+              @include font-open-sans(10, 200);
+              color: $font-color-button-add;
+            }
+          }
+        }
+      }
+    }
+
+    &__form {
+      width: 100%;
+      height: 150px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      background-color: $background-add-comment-form-color;
+
+      &__img {
+        width: 75px;
+        height: 75px;
+        float: left;
+
+        .img {
+          width: 51px;
+          height: 51px;
+          border: 0;
+          border-radius: 31px;
+          margin: 12px;
+          background: $background-album-img-light-color;
+        }
+      }
+
+      &__description {
+        width: calc(100% - 75px - 45px);
+        height: 125px;
+        float: left;
+        padding: 15px 40px 10px 5px;
+
+        .form__control {
+          @include form-control();
+          width: calc(100% - 26px);
+          margin: 0;
+          color: $border-button-light-color;
+          border: 1px solid $border-button-light-color;
+          background-color: $background-button-color;
+
+          &.comment {
+            margin-top: 5px;
+            border-radius: 6px;
+            height: 50px;
+          }
+        }
+      }
+
+      button {
+        @include custom-button();
+        border: 1px solid $border-button-color;
+        width: auto;
+        padding: 0 20px;
+        float: right;
+        margin-top: 6px;
+
+        .add {
+          position: relative;
+          text-transform: uppercase;              
+        }
+      }
+    }
+  }
+
+  .comments__container {
+    width: 100%;
+    max-height: calc(100% - 160px - 48px - 80px);
+    margin-top: 10px;
+    overflow-y: auto;
+
+    .comment__item {
+      width: 100%;
+      height: 75px;
+      margin-bottom: 5px;
+      background: $background-album-color;
+
+      &__img {
+        width: 75px;
+        height: 75px;
+        float: left;
+
+        img {
+          width: 51px;
+          height: 51px;
+          border: 0;
+          border-radius: 31px;
+          margin: 12px;
+          background: $background-album-img-color;
+        }
+      }
+
+      &__description {
+        width: calc(100% - 75px - 45px);
+        min-height: 55px;
+        float: left;
+        padding: 10px 40px 10px 5px;
+
+        p {
+          @include font-open-sans(12, 200);
+          margin: 0;
+          font-size: 13px;
+          padding-top: 3px;
+
+          &.email {
+            color: $font-color-comments-email;
+          }
+
+          &.comment {
+            color: $font-color-comments-comment;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+
+  .button__more__comments {
+    @include custom-button();
+    border: 1px solid $border-button-light-color;
+    width: auto;
+    float: right;
+    margin-top: 10px;
+    padding: 0 20px;
+
+    .show__more {
+      font-size: 10px;
+      color: $font-color-button-more;
+    }
+  }
+
+  
+  /* Custom placeholder color */
+  *::-webkit-input-placeholder {
+    color: $border-button-color;
+  }
+  *:-moz-placeholder {
+    /* FF 4-18 */
+    color: $border-button-color;
+  }
+  *::-moz-placeholder {
+    /* FF 19+ */
+    color: $border-button-color;
+  }
+  *:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $border-button-color;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #album-details {
+    padding-top: 10px;
+
+    .content__wrapper {
+      width: calc(100% - 20px);
+
+      .album__item {
+        height: 370px;
+
+        &__img {
+          width: 100%;
+          display: block;
+          margin: 10px auto;
+          background: transparent;
+
+          img {
+            margin: 0 auto;
+            display: block;
+            background: $background-album-img-color;
+          }
+        }
+
+        &__description {
+          padding: 10px 20px;
+          width: calc(100% - 40px);
+
+          &__bottom__info {
+
+            .subcontainer {
+
+              &.right {
+                width: 100%;
+              }
+
+              &.left {
+                width: 100%;
+
+                button.btnBack {
+                  display: block;
+                  margin: 0 auto;
+                  margin-top: 25px;
+                  float: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .add__comments {
+        margin-top: 10px;
+
+        button.add.toogleAdd {
+          display: none;
+        }
+
+        .subcontainer.right {
+          button {
+            margin: 0px !important;
+          }
+        }
+
+        &__form {
+          &__img {
+            width: 51px;
+            height: 50px;
+
+            .img {
+              width: 30px;
+              height: 30px;
+              margin: 12px 0 0 15px;
+            }
+          }
+
+          &__description {
+            width: calc(100% - 51px - 25px);
+            padding: 15px 15px 10px 10px;
+
+            button.btnSaveComment {
+              display: block;
+              margin: 0 auto;
+              margin-top: 6px;
+              float: none;
+            }
+
+            .add-action-container {
+              margin-left: -44px;
+            }
+
+            .form__control {
+
+              &.comment {
+                margin-left: -46px;
+                width: calc(100% + 20px)
+              }
+            }
+          }
+        }
+      }
+
+      .button__more__comments {
+        display: block;
+        margin: 0 auto;
+        margin-top: 15px;
+        margin-bottom: 30px;
+        float: none;
+      }
+    }
+  }
+}

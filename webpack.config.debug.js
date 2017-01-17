@@ -54,7 +54,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: APP_TITLE,
-      template: path.join(APP_DIR, "/index.html"), // Load a custom template
+      template: path.join(APP_DIR, "/index.debug.html"), // Load a custom template
       inject: true, // Inject all scripts into the body
       favicon: path.join(APP_DIR, "/favicon.ico")
     })
