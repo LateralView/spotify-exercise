@@ -1,0 +1,12 @@
+@import './album-item/album-item';
+
+album-list {
+  .album-list-container {
+    margin: 0 auto;
+    width: 90%;
+
+    album-item {
+      margin-bottom: 20px;
+    }
+  }
+}

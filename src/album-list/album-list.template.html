@@ -1,0 +1,9 @@
+<section>
+  <div>
+    <search-bar do-search="$ctrl.doSearch($event)"></search-bar>
+  </div>
+  <article class="album-list-container" ng-repeat="album in $ctrl.albums">
+    <album-item album="album" view-comments="$ctrl.viewComments($event)"></album-item>
+    <div ng-show="album.isCommentEnabled">Comments</div>
+  </article>
+</section>
