@@ -1,0 +1,41 @@
+.comment-new-wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	background-color: $dark-grey;
+	justify-content: flex-start;
+	margin-bottom: 20px;
+
+	.comment-new-pic{
+		width: 8%;
+	}
+
+	.comment-new-inputs-wrapper{
+		padding: 20px 10px 10px 10px;
+		width: 86%;
+		display:flex;
+		flex-direction: column;
+
+		.comment-new-inputs{
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			margin-bottom: 10px;
+
+			.email{
+				margin-bottom: 10px;
+			}
+		}
+
+		.comment-new-submit{
+			display:flex;
+			justify-content: flex-end;
+			
+			input
+			  &[type="submit"]{
+			  	&:hover{
+			  		cursor: pointer;			  		
+			  	}
+			  }
+		}
+	}	
+}

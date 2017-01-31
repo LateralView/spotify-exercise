@@ -1,0 +1,13 @@
+.album-search-wrapper{
+	display: flex;
+	justify-content: center;
+	background-color: $dark-grey;
+	padding: 10px;
+	margin-bottom: 50px;
+
+	input{
+		width: 50%;
+		border-radius: 10px;
+		padding: 3.5px;
+	}
+}
