@@ -3,15 +3,20 @@ import template from './album-list-item.html';
 export const AlbumListItemComponent = {
 	template,
 	bindings: {
-		album: '<'
+		album: '<',
+		location: '@'
 	},
 	controller: class AlbumListItemComponent{
-		constructor(){
-			this.enableComments = false;
+		constructor($state){
+			this.state = $state;
 		}
 
-		toggleComments(){
-			this.enableComments = !this.enableComments;
+  		goToMain() {
+		  this.state.go('/');
 		}
+		  
+	  	goToComments() {
+		  this.state.go('comments', {albumId: this.album.id});
+		}	
 	}
 }

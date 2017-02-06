@@ -4,6 +4,5 @@ export const AlbumListComponent = {
 	template,
 	bindings: {
 		data: '<'
-	},
-	controller: class AlbumListComponent{}
+	}
 }

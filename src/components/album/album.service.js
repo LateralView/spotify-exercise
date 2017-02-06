@@ -1,16 +1,20 @@
 export class AlbumService{
 	
-	constructor($q, $http){
+	constructor($http){
 		'ngInject';
 		this.$http = $http;
 	}
 
 	getAlbumsByName(albumName) {
-	return this.$http.get(`/search?q=${albumName}`);
+		return this.$http.get("/search", {params:{"q": albumName}});
+	}
+
+	getAlbumById(id) {
+		return this.$http.get("/album/"+id);
 	}
 
 	getCommentsByAlbumId(id){
-		return this.$http.get(`/comments/${id}`);
+		return this.$http.get("/comments/"+id);
 	}
 
 	postNewComment(comment){

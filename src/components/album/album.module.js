@@ -2,18 +2,14 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
 import { AlbumComponent } from './album.component';
-import { AlbumSearchModule } from './album-search/album-search.module';
 import { AlbumListModule } from './album-list/album-list.module';
-import { AlbumCommentsModule } from './album-comments/comment.module';
 import { AlbumService } from './album.service';
 
 
 export const AlbumModule = angular
 	.module('albumModule', [
 		uiRouter,
-		AlbumSearchModule,
-		AlbumListModule,
-		AlbumCommentsModule
+		AlbumListModule
 	])
 	.component('album', AlbumComponent)
 	.service('AlbumService', AlbumService)
@@ -21,7 +17,7 @@ export const AlbumModule = angular
 		'ngInject';
 		$stateProvider
 			.state('album', {
-				url: '/',
+				url: '/:albumName',
 				template: '<album></album>'
 			})
 	})

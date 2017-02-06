@@ -118,11 +118,11 @@ body {
 }
 
 // SCSS
-@import 'components/album/album-search/album-search';
+@import 'components/search/search';
 @import 'components/album/album';
 @import 'components/album/album-list/album-list';
 @import 'components/album/album-list/album-list-item/album-list-item';
-@import 'components/album/album-comments/comment';
-@import 'components/album/album-comments/comment-list/comment-list';
-@import 'components/album/album-comments/comment-list/comment-list-item/comment-list-item';
-@import 'components/album/album-comments/comment-new/comment-new';
+@import 'components/comments/comments';
+@import 'components/comments/comments-list/comments-list';
+@import 'components/comments/comments-list/comments-list-item/comments-list-item';
+@import 'components/comments/comments-new/comments-new';
