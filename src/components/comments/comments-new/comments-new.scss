@@ -1,0 +1,67 @@
+.comment-new-wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	background-color: $dark-grey;
+	justify-content: flex-start;
+	padding: 16px 0px 0px 14px;
+	margin-bottom: 20px;	
+
+	.comment-new-pic{
+		width: 8%;
+
+		.circular{
+			background-color: $light-grey;
+		}
+	}
+
+	.comment-new-inputs{
+		display: flex;
+		width: 86%;
+		flex-direction: column;
+		flex-wrap: wrap;
+		margin-bottom: 10px;
+
+		.email{
+			margin-bottom: 10px;
+
+			.circle-md{
+				display: none;
+			}
+		}
+
+		.comment-new-submit{
+			margin-top: 10px;
+			display:flex;
+			justify-content: flex-end;
+			
+			input{				
+			  	&:hover{
+			  		cursor: pointer;			  		
+			  	}
+		  	}
+		}
+	}
+}
+
+	
+@media (max-width: 1000px) {
+	.comment-new-wrapper{
+		padding-left: 0;
+		display: flex;
+		justify-content: center;
+
+		.add-comment{
+			display: none;
+		}
+
+		.comment-new-pic{
+			display: none;
+		}
+
+		.comment-new-submit{
+			margin: 0 auto;
+			margin-top: 10px;
+		}
+	}
+
+}

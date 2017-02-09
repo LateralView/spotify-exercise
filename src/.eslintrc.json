@@ -32,6 +32,7 @@
     "no-warning-comments": 1,
     "no-unused-vars": 1,
     "no-console": 1,
-    "angular/log": 1
+    "angular/log": 1,
+    "angular/no-service-method": 0
   }
 }

@@ -1,0 +1,16 @@
+<album-list-item class="comments-album-list-item" button-text="BACK TO SEARCH" on-item-selected="$ctrl.itemSelected($event)" album="$ctrl.album"></album-list-item>
+
+<div class="comments-section-wrapper">	
+	<div class="comments-header">		
+		<h4 class="comments-header-title">COMMENTS</h4>		
+
+		<div class="comments-new">
+			<a ng-click="$ctrl.toggleNewComment()" ng-hide="$ctrl.enableNewComment"><span class="add-comment">Add comment</span> <i class="circle-sm flex-centered"><span class="mdi mdi-plus"></span></i></a>	
+			<a ng-click="$ctrl.toggleNewComment()" ng-show="$ctrl.enableNewComment" class="circle-sm flex-centered"><span class="mdi mdi-close"></span></a>
+		</div>	
+	</div>
+
+	<comments-new ng-if="$ctrl.enableNewComment" album-id="$ctrl.albumId" add-comment="$ctrl.addComment($event)"></comments-new>
+
+	<comments-list comments="$ctrl.comments"></comments-list>
+</div>

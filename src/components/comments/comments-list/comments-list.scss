@@ -1,0 +1,31 @@
+.comment-list-wrapper{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	margin-bottom: 50px;
+
+	.curved-btn{
+		width: 27%;
+		text-align: center;
+		align-self: end;
+		margin-top: 12px;
+	}
+}
+
+@media (max-width: 1000px) {
+		.comment-list-wrapper{
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			margin: 0 auto;
+			margin-bottom: 50px;
+
+		.curved-btn{
+			width: 50%;
+			text-align: center;
+			align-self: center;
+			margin-top: 12px;
+		}
+	}
+}

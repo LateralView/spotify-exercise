@@ -1,14 +1,164 @@
 // Import from npm
 @import 'normalize.css';
 
-$background-color: #fff;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css');
 
-body {
-  background: $background-color;
+//Colors
+$shamrock-green: #03bb4f;
+$white: #ffffff;
+$grey: #404040;
+$dark-grey: #282828;
+$light-grey: #646464;
+$lighter-grey: #636363;
+$lightest-grey: rgb(154, 154, 145);
+$black: #000;
+$black-seventy: #1f1f1f 70%;
 
-  section {
-    height: 100vh;
-    position: relative;
-    width: 100vw;
+//Fonts
+$font-size: 13px;
+$font-size-small: 10px;
+$letter-spacing: .2px;
+$font-family: 'Open Sans', sans-serif;
+
+//Mixins
+@mixin input-placeholder($color){
+  &::-webkit-input-placeholder{
+    color: $color;
+  }
+  &:-moz-placeholder{
+    color: $color;
+  }
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder{
+    color: $color;
   }
 }
+
+@mixin trans($val) {
+   -webkit-transition: $val;
+   -moz-transition: $val; 
+   -o-transition: $val; 
+   transition: $val; 
+}
+
+@mixin btn-theme($btn-color){
+  background-color: $black;
+ 	color: $white;    	
+	border: 1.5px solid $btn-color;
+	
+   &:hover {
+     @if $btn-color == $white{
+     	color: $black;    	
+     }
+     background-color: darken($btn-color, 6%);
+	   border: 1.5px solid darken($btn-color, 6%);
+   }
+
+	&:active {
+	 border: 1.5px solid darken($btn-color, 6%);
+     box-shadow: inset 0 0 1.094em #472566, inset 0 .063em #390668, inset 0 -0.188em #682CA0, 0 .063em rgba(255,255,255,.4);  
+   }
+}
+
+@mixin circle-btn{
+  background-color: $lighter-grey;
+  line-height: 20px;
+
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+
+  text-align: center;
+}
+
+//Helpers
+.flex-centered{
+  display : inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//Buttons
+.white {
+   @include btn-theme($white);
+}
+
+.green {
+   @include btn-theme($shamrock-green);
+}
+
+.curved-btn {
+   border-radius: 20px 20px 20px 20px;
+   padding: 8px 30px 8px 30px;
+   @include trans(0.2s ease-in-out);
+}
+
+.custom-input{
+  background-color: $black;
+  @include input-placeholder($shamrock-green);
+  color: $white;
+  border-radius: 20px;
+  padding: 6px;
+  border: 1px solid $light-grey;
+}
+
+.circle-sm {
+  height: 26px;
+  width: 26px;
+  font-size: 1.4em;
+
+  @include circle-btn;
+}
+
+.circle-md {
+  height: 35px;
+  width: 35px;
+  font-size: 1.3em;
+
+  @include circle-btn;
+}
+
+
+.circular {
+  width: 50px;
+  height: 50px;
+  border-radius: 250px;
+  -webkit-border-radius: 250px;
+  -moz-border-radius: 25px;
+}
+
+body {
+  background-color: $black;
+  font-family: $font-family;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  color: $white;
+
+
+  section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  a{
+  	color: $shamrock-green;
+  	text-decoration: none;
+
+  	&:hover{
+  		cursor: pointer;
+  	}
+  }
+}
+
+// SCSS
+@import 'components/search/search';
+@import 'components/album/album';
+@import 'components/album/album-list/album-list';
+@import 'components/album/album-list/album-list-item/album-list-item';
+@import 'components/comments/comments';
+@import 'components/comments/comments-list/comments-list';
+@import 'components/comments/comments-list/comments-list-item/comments-list-item';
+@import 'components/comments/comments-new/comments-new';

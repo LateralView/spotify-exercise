@@ -1,0 +1,40 @@
+.comments-header{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+
+	.comments-header-title{
+		color: $lighter-grey;
+	}
+
+	.comments-new{
+		margin: 20px;
+  		color: $shamrock-green;  		
+
+  		a{
+  			display: flex;
+			align-items: center;
+
+			.circle-sm{				
+	  			margin-left: 10px;
+			}
+
+  		}
+	}
+}
+
+.comments-section-wrapper{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 60%;
+	margin: 0 auto;
+}
+
+
+@media (max-width: 1000px) {
+	.add-comment{
+		display:none;
+	}
+}
