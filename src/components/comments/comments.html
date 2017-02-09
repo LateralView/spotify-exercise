@@ -1,14 +1,12 @@
-<search on-search="$ctrl.search($event)"></search>
-
-<album-list-item location="comment" album="$ctrl.album"></album-list-item>
+<album-list-item class="comments-album-list-item" button-text="BACK TO SEARCH" on-item-selected="$ctrl.itemSelected($event)" album="$ctrl.album"></album-list-item>
 
 <div class="comments-section-wrapper">	
 	<div class="comments-header">		
 		<h4 class="comments-header-title">COMMENTS</h4>		
 
 		<div class="comments-new">
-			<span ng-click="$ctrl.toggleNewComment()" ng-hide="$ctrl.enableNewComment">Add Comment</span>	
-			<span ng-click="$ctrl.toggleNewComment()" ng-show="$ctrl.enableNewComment">Cancel</span>
+			<a ng-click="$ctrl.toggleNewComment()" ng-hide="$ctrl.enableNewComment"><span class="add-comment">Add comment</span> <i class="circle-sm flex-centered"><span class="mdi mdi-plus"></span></i></a>	
+			<a ng-click="$ctrl.toggleNewComment()" ng-show="$ctrl.enableNewComment" class="circle-sm flex-centered"><span class="mdi mdi-close"></span></a>
 		</div>	
 	</div>
 

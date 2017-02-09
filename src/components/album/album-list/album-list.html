@@ -1,1 +1,1 @@
-<album-list-item ng-repeat="album in $ctrl.data.items" location="main" album="album"></album-list-item>
+<album-list-item ng-repeat="album in $ctrl.data.items" button-text="VIEW COMMENTS" on-item-selected="$ctrl.itemSelected($event)" album="album"></album-list-item>

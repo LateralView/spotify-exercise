@@ -1,20 +1,16 @@
 import template from './search.html';
 
 export const SearchComponent = {
-	template,
-	bindings: {
-		onSearch: '&'
-	},
-	controller: class SearchComponent{
-		
-		constructor(){}
+  template,
+  controller: class SearchComponent{
+    constructor($state) {
+      this.$state = $state;
+    }
 
-		$onInit(){
-			this.album = '';			
-		}
-
-		search(){
-			this.onSearch({$event: {album: this.album}});
-		}
-	}
-}
+    search() {
+      if(this.query.length > 3) {
+        this.$state.go('album', {q: this.query});
+      }
+    }
+  }
+};

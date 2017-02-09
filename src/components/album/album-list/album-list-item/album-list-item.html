@@ -3,16 +3,21 @@
 		<div class="album-list-item-img">
 			<img ng-src="{{$ctrl.album.images[0].url}}" alt="cover">	
 		</div>	
-		<div class="album-list-item-info">		
-			<div class="album-list-item-details">
-				<h3>{{ $ctrl.album.artists[0].name }}</h3>
-				<h1>{{ $ctrl.album.name }}</h1>	
-		      	<a href="{{$ctrl.album.external_urls.spotify}}" title=""><i class="fa fa-volume-up" aria-hidden="true"></i> Listen on Spotify</a>
+		<img class="img-wrapper" style="background-image: url('{{$ctrl.album.images[0].url}}')"></img>	
+			<div class="album-list-item-info">		
+				<div class="album-list-item-details">
+					<p class="album-artist">{{ $ctrl.album.artists[0].name | uppercase }}</p>
+					<h1 class="album-title">{{ $ctrl.album.name }}</h1>	
+			      	<a class="album-spotify" href="{{$ctrl.album.external_urls.spotify}}" title="">
+				      	<span class="circle-md flex-centered">
+				      		<i class="mdi mdi-volume-high"></i>
+				      	</span>
+				      	 Listen on Spotify
+			      	 </a>
+				</div>
+				<div class="album-list-item-comments">
+				    <a href="" ng-click="$ctrl.onItemClick()" class="curved-btn green" ng-bind="$ctrl.buttonText"></a>
+				</div>
 			</div>
-			<div class="album-list-item-comments">
-			    <a href="#" ng-click="$ctrl.goToComments()"  ng-if=" $ctrl.location === 'main' " class="curved-btn green">VIEW COMMENTS</a>
-			    <a href="#" ng-click="$ctrl.goToMain()" ng-if=" $ctrl.location === 'comment' " class="curved-btn white"> < BACK TO SEARCH</a>	   	
-			</div>
-		</div>
 	</div>
 </div>

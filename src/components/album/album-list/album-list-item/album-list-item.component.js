@@ -1,22 +1,19 @@
 import template from './album-list-item.html';
 
 export const AlbumListItemComponent = {
-	template,
-	bindings: {
-		album: '<',
-		location: '@'
-	},
-	controller: class AlbumListItemComponent{
-		constructor($state){
-			this.state = $state;
-		}
-
-  		goToMain() {
-		  this.state.go('/');
-		}
-		  
-	  	goToComments() {
-		  this.state.go('comments', {albumId: this.album.id});
-		}	
-	}
-}
+  template,
+  bindings: {
+    album: '<',
+    buttonText: '@',
+    onItemSelected: '&'
+  },
+  controller: class AlbumListItemComponent{
+    onItemClick() {
+      this.onItemSelected({
+        $event: {
+          album: this.album
+        }
+      });
+    }
+  }
+};

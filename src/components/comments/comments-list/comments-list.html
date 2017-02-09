@@ -1,3 +1,5 @@
 <div class="comment-list-wrapper">
-	<comments-list-item ng-repeat="comment in $ctrl.comments" comment="comment"></comments-list-item>
+	<comments-list-item ng-repeat="comment in $ctrl.comments | limitTo: $ctrl.max" comment="comment"></comments-list-item>
+
+    <a href="" ng-show="$ctrl.comments.length > $ctrl.max" ng-click="$ctrl.showMoreComments()" class="curved-btn white">SHOW MORE COMMENTS</a>
 </div>

@@ -2,7 +2,7 @@
 @import 'normalize.css';
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css');
 
 //Colors
 $shamrock-green: #03bb4f;
@@ -10,6 +10,8 @@ $white: #ffffff;
 $grey: #404040;
 $dark-grey: #282828;
 $light-grey: #646464;
+$lighter-grey: #636363;
+$lightest-grey: rgb(154, 154, 145);
 $black: #000;
 $black-seventy: #1f1f1f 70%;
 
@@ -61,6 +63,23 @@ $font-family: 'Open Sans', sans-serif;
    }
 }
 
+@mixin circle-btn{
+  background-color: $lighter-grey;
+  line-height: 20px;
+
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+
+  text-align: center;
+}
+
+//Helpers
+.flex-centered{
+  display : inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 //Buttons
 .white {
    @include btn-theme($white);
@@ -80,10 +99,27 @@ $font-family: 'Open Sans', sans-serif;
   background-color: $black;
   @include input-placeholder($shamrock-green);
   color: $white;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 6px;
   border: 1px solid $light-grey;
 }
+
+.circle-sm {
+  height: 26px;
+  width: 26px;
+  font-size: 1.4em;
+
+  @include circle-btn;
+}
+
+.circle-md {
+  height: 35px;
+  width: 35px;
+  font-size: 1.3em;
+
+  @include circle-btn;
+}
+
 
 .circular {
   width: 50px;
@@ -91,7 +127,7 @@ $font-family: 'Open Sans', sans-serif;
   border-radius: 250px;
   -webkit-border-radius: 250px;
   -moz-border-radius: 25px;
-  }
+}
 
 body {
   background-color: $black;

@@ -1,8 +1,11 @@
 import template from './album-list.html';
+import controller from './album-list.controller';
 
 export const AlbumListComponent = {
-	template,
-	bindings: {
-		data: '<'
-	}
-}
+  template,
+  controller,
+  bindings: {
+    data: '<',
+    onItemSelected: '&'
+  }
+};

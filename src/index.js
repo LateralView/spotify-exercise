@@ -5,9 +5,9 @@ import { ComponentsModule } from './components/components.module';
 
 angular
   .module('spotifyzier', [
-  	uiRouter,
-  	ComponentsModule
-	])
+    uiRouter,
+    ComponentsModule
+  ])
   .config(($urlRouterProvider) => {
     'ngInject';
     $urlRouterProvider.otherwise('/');
