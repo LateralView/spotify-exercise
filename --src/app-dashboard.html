@@ -1,0 +1,15 @@
+<form>
+  <input type="search" data-ng-model="$ctrl.term"/>
+  <button data-ng-click="$ctrl.search()" class="btnSearch">
+    <i class="fa fa-search"></i>
+  </button>
+</form>
+<div class="separator"></div>
+<div data-ng-repeat="album in $ctrl.result.items" class="result">
+  <img data-ng-src="{{album.images[0].url}}" class="Bitmap"/>
+  <div class="album">
+    <h3>{{ album.artists[0].name}}</h2>
+    <h2>{{ album.name}}</h2>
+    <a class="Rectangle-7" data-ng-href="#!/album/{{album.id}}"><span>View comments</span></a>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="result">
+  <img data-ng-src="{{$ctrl.album.images[0].url}}" class="Bitmap"/>
+  <div class="album">
+    <h3>{{ $ctrl.album.artists[0].name}}</h2>
+    <h2>{{ $ctrl.album.name}}</h2>
+    <a class="listen-on-spotify" data-ng-href="https://open.spotify.com/album/{{ $ctrl.album.id }}" target="_blank">
+      <span class="circle">
+        <i class="fa fa-volume-up"></i>
+      </span>
+      <span class="link">Listen on Spotify</span>
+    </a>
+    <a class="Rectangle-7" data-ui-sref="index">
+      <span><i class="fa fa-angle-left"></i> Back to search</span>
+    </a>
+  </div>
+  <h3 class="title">comments</h3>
+  <a class="add-comment" data-ng-click="$ctrl.addComment()" data-ng-show="!$ctrl.newComment">
+    Add comment <i class="fa fa-plus"></i>
+  </a>
+  <a class="add-comment" data-ng-click="$ctrl.quitComment()" data-ng-show="$ctrl.newComment">
+    <i class="fa fa-remove"></i>
+  </a>
+
+  <div class="comments">
+    <comment-form class="form-comment" data-ng-show="$ctrl.newComment" album="$ctrl.album" comments="$ctrl.comments" view-form="$ctrl.newComment"></comment-form>
+    <comment class="comment" ng-repeat="comment in $ctrl.comments" comment="comment"></comment>
+  </div>
+</div>
