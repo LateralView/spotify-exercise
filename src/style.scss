@@ -1,14 +1,386 @@
 // Import from npm
 @import 'normalize.css';
 
-$background-color: #fff;
-
 body {
-  background: $background-color;
+  width: 1280px;
+  height: 51px;
+  background-color: #181818;
+  margin: 0 auto;
+}
 
-  section {
-    height: 100vh;
-    position: relative;
-    width: 100vw;
-  }
+search {
+  background-color: #282828;
+  display: inline-block;
+}
+
+form {
+  width: 1006px;
+  height: 24px;
+  border-radius: 40px;
+  background-color: #ffffff;
+  margin: 14px 137px 13px 137px;
+}
+
+form input[type="search"] {
+  border:none;
+  float: right;
+  width: 95%;
+  margin: 1px 1% 1px 0;
+}
+
+form input[type="search"]:focus{
+	outline:0px;
+}
+
+form .btnSearch {
+  border: none;
+  background: none;
+  width: 2%;
+  margin: 3px 0 1px 1%;
+}
+
+.Desktop {
+  width: 1280px;
+  height: 780px;
+  background-color: #181818;
+}
+
+.separator {
+  width: 1280px;
+  height: 1px;
+  background-color: #181818;
+}
+
+.result {
+  width: 956px;
+  margin: 14px 162px;
+  position: relative;
+  float: left;
+}
+
+.result .Bitmap {
+  width: 180px;
+  height: 180px;
+  float: left;
+}
+
+.result .album {
+  width: 780px;
+  height: 180px;
+  background-image: linear-gradient(to left, rgba(40,40,40,0.85), #282828);
+  position: absolute;
+  left: 180px;
+  top: 0px;
+}
+
+.result .album h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 46px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  position: absolute;
+  top: 41px;
+  left: 30px;
+  margin: 0;
+}
+
+.result .album h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #a0a097;
+  position: absolute;
+  top: 23px;
+  left: 31px;
+  margin: 0;
+}
+
+.result .album .Rectangle-7 {
+  width: 160px;
+  height: 30px;
+  border-radius: 40px;
+  background-color: rgba(31,31,31,0.7);
+  border: solid 1px #03bb4f;
+  position: absolute;
+  left: 585px;
+  bottom: 20px;
+}
+
+.result .album .listen-on-spotify {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  color: #03bb4f;
+  position: absolute;
+  bottom: 28px;
+  left: 31px;
+  text-decoration: none;
+}
+
+.result .album .listen-on-spotify .circle {
+  width: 30px;
+  height: 30px;
+  background-color: #404040;
+  border-radius: 50%;
+  float: left;
+}
+
+.result .album .listen-on-spotify .link {
+  padding: 4px 0 0 14px;
+  height: 30px;
+  float: left;
+}
+
+.result .album .listen-on-spotify .circle i {
+  color: #FFF;
+  font-size: 12.3px;
+  line-height: 12px;
+  margin: 9px;
+}
+
+.result .album .Rectangle-7 span {
+  width: 160px;
+  height: 17px;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+  margin: 5.4px 0 7.6px 0;
+  float: left;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.result .title {
+  width: 86px;
+  height: 17px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  text-align: left;
+  color: #a0a097;
+  text-transform: uppercase;
+  position: absolute;
+  top: 200px;
+}
+
+.result .add-comment {
+  position: absolute;
+  top: 200px;
+  right: 0px;
+  width: 116px;
+  height: 18px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  text-align: right;
+  color: #03bb4f;
+}
+
+.result .comments {
+    margin:75px 0 0 0;
+    float: left;
+}
+
+.result .comments .form-comment {
+  width: 956px;
+  height: 156px;
+  background-color: #282828;
+  float: left;
+  border-radius: 0;
+  margin: 0 0 15px 0;
+}
+
+.result .comments .form-comment .avatar {
+  width: 80px;
+  padding-top: 12px;
+  float: left;
+}
+
+.result .comments .form-comment .avatar .bitmap {
+  width: 50px;
+  height: 50px;
+  background-color: #404040;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  background-size: 100% auto;
+  margin: 0 12px;
+  float: left;
+}
+
+.result .comments .form-comment .form {
+  width: 836px;
+  margin-right: 40px;
+  float: left;
+  padding-top: 13px;
+}
+
+.result .comments .form-comment .form input {
+  width: 810px;
+  height: 24px;
+  border-radius: 40px;
+  background-color: rgba(31, 31, 31, 0.7);
+  border: solid 1px #404040;
+  color: #03bb4f;
+  padding: 3px 11.3px 4px 11.3px;
+  margin-right: 40px;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.result .comments .form-comment .form input::-webkit-input-placeholder {
+  color: #03bb4f;
+}
+
+.result .comments .form-comment .form input:-moz-placeholder { /* Firefox 18- */
+  color: #03bb4f;
+}
+
+.result .comments .form-comment .form input::-moz-placeholder {  /* Firefox 19+ */
+  color: #03bb4f;
+}
+
+.result .comments .form-comment .form input:-ms-input-placeholder {
+  color: #03bb4f;
+}
+
+.result .comments .form-comment .form textarea {
+  width: 810px;
+  height: 48px;
+  border-radius: 4px;
+  background-color: rgba(31, 31, 31, 0.7);
+  border: solid 1px #404040;
+  color: #03bb4f;
+  padding: 3px 11.3px;
+  margin-right: 40px;
+  margin-top: 10px;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 6.8px;
+}
+
+.result .comments .form-comment .form textarea::-webkit-input-placeholder {
+  color: #03bb4f;
+}
+
+.result .comments .form-comment .form textarea:-moz-placeholder { /* Firefox 18- */
+  color: #03bb4f;
+}
+
+.result .comments .form-comment .form textarea::-moz-placeholder {  /* Firefox 19+ */
+  color: #03bb4f;
+}
+
+.result .comments .form-comment .form textarea:-ms-input-placeholder {
+  color: #03bb4f;
+}
+
+.result .comments .form-comment .form button {
+  width: 114px;
+  height: 30px;
+  border-radius: 40px;
+  background-color: rgba(31, 31, 31, 0.7);
+  border: solid 1px #03bb4f;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  padding: 5.4px 0 7.6px 0;
+  text-transform: uppercase;
+  float: right;
+  margin-top: 3.5px;
+}
+
+.result .comments .comment {
+  width: 956px;
+  height: 76px;
+  background-color: #282828;
+  margin-bottom: 5px;
+  float: left;
+}
+
+.result .comments .comment .avatar {
+  width: 50px;
+  float: left;
+  margin: 10.3px 12px 14px 12px;
+}
+
+.result .comments .comment .avatar .bitmap {
+  width: 50px;
+  height: 51.4px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  background-size: 100% auto;
+}
+
+.result .comments .comment .body {
+  width: 836px;
+  height: 76px;
+  background-color: #282828;
+  margin-bottom: 5px;
+  margin-right: 40px;
+  float: left;
+}
+
+.result .comments .comment .body .email {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: #a0a097;
+  width: 100%;
+  float: left;
+  margin-top: 11px;
+}
+
+.result .comments .comment .body .text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: #ffffff;
+  width: 100%;
+  float: left;
+  margin-top: 5px;
 }
