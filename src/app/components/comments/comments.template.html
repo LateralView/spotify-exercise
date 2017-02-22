@@ -1,0 +1,5 @@
+<album-item album-item="$ctrl.album" showing-comments="true" on-show-results="$ctrl.showResults()"></album-item>
+<h1>Comments</h1>
+<comment-list comment-list="$ctrl.comments"></comment-list>
+<button ng-click="$ctrl.newComment()">Add Comment</button>
+<comment-item ng-if="$ctrl.showNewComment" new-comment="true" on-add-comment="$ctrl.addComment($event)"></comment-item>

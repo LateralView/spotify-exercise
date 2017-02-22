@@ -1,0 +1,6 @@
+<div ng-repeat="album in $ctrl.albumList">
+  <album-item album-item="album" on-show-comments="$ctrl.showComments($event)"></album-item>
+</div>
+<div ng-if="!$ctrl.albumList.length">
+  <p>No Albums Found.</p>
+</div>

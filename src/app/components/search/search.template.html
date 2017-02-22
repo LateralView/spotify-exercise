@@ -1,0 +1,14 @@
+<section>
+  <form name="searchForm">
+    <p>Album Name</p>
+    <input type="text" ng-model="$ctrl.albumName" required minlength="4" placeholder="search">
+    <button ng-click="$ctrl.search()" ng-disabled="!searchForm.$valid">Search</button>
+  </form>
+  <div ng-if="$ctrl.showResults">
+    <album-list on-show-comments="$ctrl.onShowComments($event)" album-list="$ctrl.albumList"></album-list>
+    <button ng-click="$ctrl.showMoreAlbums()" ng-if="$ctrl.albumList.length">Show More Results</button>
+  </div>
+  <div ng-if="$ctrl.showComments">
+    <comments on-show-results="$ctrl.onShowResults()" album="$ctrl.album"></comments>
+  </div>
+</section>
