@@ -1,0 +1,7 @@
+<img ng-src="{{$ctrl.albumItem.images[0].url}}">
+<p>{{$ctrl.albumItem.artists[0].name}}</p>
+<h1>{{$ctrl.albumItem.name}}</h1>
+<i></i>
+<p>Listen on Spotify</p>
+<button ng-if="!$ctrl.showingComments" ng-click="$ctrl.showComments()">View Comments</button>
+<button ng-if="$ctrl.showingComments" ng-click="$ctrl.showResults()">Back To Search</button>

@@ -1,0 +1,10 @@
+<form ng-if="$ctrl.newComment" name="commentForm">
+  <input type="email" placeholder="e-mail" ng-model="$ctrl.comment.email" required>
+  <br>
+  <textarea cols="40" rows="5" placeholder="Add Comment" ng-model="$ctrl.comment.text" required></textarea>
+  <button ng-click="$ctrl.addComment()" ng-disabled="!commentForm.$valid">Add</button>
+</form>
+<div ng-if="!$ctrl.newComment">
+  <p>{{$ctrl.commentItem.email}}</p>
+  <p>{{$ctrl.commentItem.text}}</p>
+</div>

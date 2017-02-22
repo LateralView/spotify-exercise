@@ -1,0 +1,5 @@
+<div ng-repeat="comment in $ctrl.commentList">
+  <comment-item comment-item="comment"></comment-item>
+</div>
+<div ng-if="!$ctrl.commentList.length">
+  <p>No Comments found.</p>
