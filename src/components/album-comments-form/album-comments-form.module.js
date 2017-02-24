@@ -1,5 +1,5 @@
 import angular from 'angular';
-import AppCommentFormComponent from './app-album-comments-form.component';
+import AppCommentFormComponent from './album-comments-form.component';
 
 const AppAlbumCommentsForm = angular
   .module('albumCommentsForm', [])

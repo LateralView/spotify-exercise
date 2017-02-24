@@ -1,6 +1,6 @@
 import angular from 'angular';
-import controller from './app-album-comments-form.controller';
-import template from './app-album-comments-form.html';
+import controller from './album-comments-form.controller';
+import template from './album-comments-form.html';
 
 
 const AppAlbumCommentFormComponent = {

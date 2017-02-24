@@ -1,5 +1,5 @@
 import angular from 'angular';
-import AppSearchComponent from './app-search.component';
+import AppSearchComponent from './search.component';
 
 const AppSearch = angular
   .module('search', [])

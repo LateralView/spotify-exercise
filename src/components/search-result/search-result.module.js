@@ -1,7 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
-import AppSearchResultComponent from './app-search-result.component';
+import AppSearchResultComponent from './search-result.component';
 
 const AppSearchResult = angular
   .module('searchResult', [])

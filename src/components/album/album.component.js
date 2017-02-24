@@ -1,5 +1,5 @@
 import angular from 'angular';
-import template from './app-album.html';
+import template from './album.html';
 
 const AppAlbumComponent = {
   bindings:{

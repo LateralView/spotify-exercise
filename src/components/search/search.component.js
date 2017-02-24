@@ -1,6 +1,6 @@
 import angular from 'angular';
-import template from './app-search.html';
-import controller from './app-search.controller';
+import template from './search.html';
+import controller from './search.controller';
 
 const AppSearchComponent = {
   controller,

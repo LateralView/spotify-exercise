@@ -1,7 +1,7 @@
 import angular from 'angular';
 
-import template from './app-search-result.html';
-import controller from './app-search-result.controller';
+import template from './search-result.html';
+import controller from './search-result.controller';
 
  const AppSearchResultComponent = {
   controller,

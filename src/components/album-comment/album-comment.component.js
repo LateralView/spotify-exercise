@@ -1,5 +1,5 @@
 import angular from 'angular'
-import template from './app-album-comment.html';
+import template from './album-comment.html';
 
 const AppCommentComponent = {
   bindings : {

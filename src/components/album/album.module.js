@@ -1,5 +1,5 @@
 import angular from 'angular';
-import AppAlbumComponent from './app-album.component';
+import AppAlbumComponent from './album.component';
 
 const AppAlbum = angular
   .module('album', [])
