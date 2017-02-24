@@ -2,37 +2,24 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
 import SpotifyService from './service'
-import { AppSearchComponent } from './app-search.component'
-import { AppSearchResultComponent } from './app-search-result.component'
-import { AppAlbumComponent } from './app-album.component'
-import { AppAlbumCommentsComponent } from './app-album-comments.component'
-import { AppCommentComponent } from './app-comment.component'
-import { AppCommentFormComponent } from './app-comment-form.component'
+import search from './app-search/app-search.module'
+import searchResult from './app-search-result/app-search-result.module'
+import album from './app-album/app-album.module'
+import albumComments from './app-album-comments/app-album-comments.module'
+import albumComment from './app-album-comment/app-album-comment.module'
+import albumCommentsForm from './app-album-comments-form/app-album-comments-form.module'
 
 const root = angular
   .module('spotifyzier', [
-    uiRouter
+    uiRouter,
+    search,
+    searchResult,
+    album,
+    albumComments,
+    albumComment,
+    albumCommentsForm
   ])
   .service('SpotifyService', SpotifyService)
-  .component('search', AppSearchComponent)
-  .component('searchResult', AppSearchResultComponent)
-  .component('album', AppAlbumComponent)
-  .component('albumComments', AppAlbumCommentsComponent)
-  .component('comment', AppCommentComponent)
-  .component('commentForm', AppCommentFormComponent)
   .config(($stateProvider, $urlRouterProvider) => {
-    $stateProvider
-      .state('index', {
-        url: '/',
-        component: 'searchResult'
-      })
-      .state('search', {
-        url: '/search/:search',
-        component: 'searchResult'
-      })
-      .state('comments', {
-        url: "/comments/:albumId",
-        component: 'albumComments'
-      })
     $urlRouterProvider.otherwise('/');
-})
+  })

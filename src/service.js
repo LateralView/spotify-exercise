@@ -1,7 +1,6 @@
 export default class SpotifyService {
   constructor ($http) {
     this.$http = $http;
-    this.data = { id : '' };
     this.url="http://localhost:3000";
   }
 
