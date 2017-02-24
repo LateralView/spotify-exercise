@@ -1,0 +1,14 @@
+<img data-ng-src="{{$ctrl.album.images[0].url}}" class="Bitmap"/>
+<div class="album">
+  <h3>{{ $ctrl.album.artists[0].name}}</h2>
+  <h2>{{ $ctrl.album.name}}</h2>
+  <a class="listen-on-spotify" data-ng-href="https://open.spotify.com/album/{{ $ctrl.album.id }}" target="_blank">
+    <span class="circle">
+      <i class="fa fa-volume-up"></i>
+    </span>
+    <span class="link">Listen on Spotify</span>
+  </a>
+  <a class="Rectangle-7" data-ng-href="./#!/comments/{{ $ctrl.album.id }}">
+    <span>View comments</span>
+  </a>
+</div>
