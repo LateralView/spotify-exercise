@@ -1,0 +1,1 @@
+Here you can put your reducers, remember to put into the combineReducers on index.js

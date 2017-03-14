@@ -45,52 +45,5 @@ gulp.task('doc', () => {
     .pipe(gulp.dest('doc'));
 });
 
-gulp.task('lint', function() {
-  return gulp.src(watch + '.js')
-  // Lint with ESLint
-  .pipe(eslint())
-  .pipe(eslint.format())
-  .pipe(eslint.failAfterError());
-});
 
-gulp.task('minify-styles', function() {
-  return gulp.src(mainSass)
-  .pipe(sourcemaps.init())
-  // Pipe Sass Processor
-  .pipe(sass({
-    outputStyle: 'compressed',
-    importer: moduleImporter()
-  }).on('error', sass.logError))
-
-  // Pipe CSS Autoprefixer
-  .pipe(autoprefixer({
-    browsers: ['last 2 versions'],
-    cascade: false
-  }))
-  .pipe(sourcemaps.write())
-  // Pipe Output
-  .pipe(gulp.dest(dest));
-});
-
-gulp.task('webpack', function() {
-  return gulp.src(mainJs)
-    .pipe(webpack(require(webpackFile)))
-    .pipe(gulp.dest(dest));
-});
-
-gulp.task('browser-sync', function() {
-  liteServer.defaults.files = [ dest + '*.*'];
-  liteServer.server();
-});
-
-gulp.task('frontend:watch', function() {
-  gulp.watch(watch, ['minify-styles', 'lint', 'webpack']);
-});
-
-gulp.task('frontend:build', ['minify-styles', 'webpack']);
-
-gulp.task('backend:build', ['doc']);
-
-gulp.task('build', ['frontend:build', 'backend:build']);
-
-gulp.task('default', ['build']);
+gulp.task('default', ['doc']);

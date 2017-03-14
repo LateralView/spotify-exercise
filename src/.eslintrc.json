@@ -1,25 +1,36 @@
 {
   "env": {
-    "browser": true,
     "commonjs": true,
     "es6": true,
     "node": true,
-    "protractor": true,
-    "mocha": true
+    "protractor": true
   },
-  "plugins": ["angular"],
-  "extends": ["eslint:recommended", "angular"],
+  "plugins": ["react"],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parser": "babel-eslint",
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "arrowFunctions": true,
+      "objectLiteralComputedProperties": true,
+      "objectLiteralShorthandMethods": true,
+      "objectLiteralShorthandProperties": true,
+      "classes": true,
+      "jsx": true,
+      "destructuring": true,
+      "spread": true,
+      "experimentalObjectRestSpread": true
+    }
   },
   "rules": {
     "indent": [
-      "error",
-      2
+        "error",
+        2
     ],
     "linebreak-style": [
-      "error",
-      "unix"
+        "error",
+        "unix"
     ],
     "quotes": [
       "error",
@@ -27,11 +38,10 @@
     ],
     "semi": [
       "error",
-      "always"
+      "never"
     ],
     "no-warning-comments": 1,
     "no-unused-vars": 1,
-    "no-console": 1,
-    "angular/log": 1
+    "no-console": 1
   }
 }

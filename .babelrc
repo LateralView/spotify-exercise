@@ -1,4 +1,8 @@
 {
-  "presets": ["es2015"],
-  "plugins": ["transform-html-import-to-string", "istanbul"]
+  "presets": ["react", "es2015"],
+  "plugins": ["transform-object-rest-spread", "transform-class-properties", ["istanbul", {
+    "exclude": [
+      "**/*.spec.js"
+    ]
+  }]]
 }

@@ -1,11 +1,13 @@
-module.exports = function(config) {
+const webpack = require('./webpack.config')
+webpack.entry = undefined
+webpack.output = undefined
+
+module.exports = config => {
   config.set({
     basePath: './',
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['mocha'],
     reporters: ['progress', 'coverage'],
     files: [
-      'node_modules/angular/angular.min.js',
-      'node_modules/angular-mocks/angular-mocks.js',
       'src/index.js',
       'src/**/*spec.js'
     ],
@@ -13,11 +15,16 @@ module.exports = function(config) {
       'src/index.js': ['webpack', 'sourcemap'],
       'src/**/*spec.js': ['webpack', 'sourcemap']
     },
-    webpack: require('./webpack.test.config.js'),
+    webpack,
     coverageReporter: {
       type : 'html',
       dir : 'coverage/frontend/'
     },
+    client: {
+      mocha: {
+        reporter: 'html'
+      }
+    },
     browsers: ['Chrome']
-  });
-};
+  })
+}
