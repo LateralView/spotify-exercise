@@ -1,0 +1,10 @@
+.album-list {
+  width: 66%;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: stretch;
+}

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "webpack-dev-server --open",
     "doc": "gulp doc",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,6 +26,7 @@
     "cors": "^2.8.1",
     "express": "^4.15.2",
     "helmet": "^3.5.0",
+    "material-design-icons": "^3.0.1",
     "md5": "^2.2.1",
     "mongoose": "^4.9.0",
     "normalize.css": "^5.0.0",
