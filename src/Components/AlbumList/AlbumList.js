@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import AlbumItem from './AlbumItem/AlbumItem'
 
 import './AlbumList.scss'
@@ -32,4 +33,10 @@ class AlbumList extends React.Component {
   }
 }
 
-export default AlbumList
+const mapStateToProps = (state) => ({
+  albums: state.Search.albums
+})
+
+const mapDispatchToProps = () => ({})
+
+export default connect(mapStateToProps, mapDispatchToProps)(AlbumList)
