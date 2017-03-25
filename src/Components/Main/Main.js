@@ -1,47 +1,29 @@
 import React from 'react'
 import Search from '../Search/Search'
 import AlbumList from '../AlbumList/AlbumList'
+import { connect } from 'react-redux'
+import * as actions from '../../Actions/Search'
 import './main.scss'
 
-class Main extends React.Component {
-
-  constructor() {
-    super()
-    this.state = {
-      albums: []
-    }
-
-    this.onSearch = this.onSearch.bind(this)
-    
-    this.search()
-  }
-
-  search(query = 'muse') {
-    fetch(`http://localhost:3000/search?q=${query}`)
-      .then(response => response.json())
-      .then((data) => {
-        console.log('DATA', data)
-        this.setState({
-          albums: data.albums && data.albums.items
-        })
-      })
-  }
-
-  onSearch(e) {
-    let q = e.target.value
-    if(q.length > 3) {
-      this.search(e.target.value)
-    }
-  }
-
+export class Main extends React.Component {
   render() {
     return(
       <div className="main">
-        <Search onSearch={ this.onSearch } />
-        <AlbumList albums={ this.state.albums } />
+        <Search { ...this.props } />
+        <AlbumList { ...this.props } />
       </div>
     )
   }
 }
 
-export default Main
+const mapStateToProps = (state) => ({
+  albums: state.Search.albums
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  onSearch (query) {
+    dispatch(actions.searchRequested(query.target.value))
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main)

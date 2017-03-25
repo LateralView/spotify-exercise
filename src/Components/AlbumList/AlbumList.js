@@ -13,8 +13,8 @@ class AlbumList extends React.Component {
     this.gotoComment = this.gotoComment.bind(this)
   }
 
-  gotoComment(item) {
-    console.log(`Se clickeó el comment del item: ${ item.name }`)
+  gotoComment() {
+    //console.log(`Se clickeó el comment del item: ${ item.name }`)
   }
 
   render() {

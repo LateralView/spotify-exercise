@@ -19,7 +19,6 @@ class Search extends React.Component {
       </div>
     )
   }
-
 }
 
 export default Search

@@ -15,7 +15,6 @@ class AlbumItem extends React.Component {
   }
 
   onItemClick() {
-    console.log('THISPROPS:', this.props)
     this.props.onCommentClick(this.props.item)
   }
 

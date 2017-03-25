@@ -4,7 +4,7 @@ import store from './store'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router, Route, browserHistory } from 'react-router'
-import { routerReducer, syncHistoryWithStore } from 'react-router-redux'
+import { syncHistoryWithStore } from 'react-router-redux'
 
 import Main from './Components/Main/Main'
 const __store = store()
