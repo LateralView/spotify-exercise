@@ -5,7 +5,6 @@ import { types } from '~/Actions/Search'
 function* searchRequestHandler({ query }) {
   try {
     const res = yield call(api.search, query)
-    console.log('RESULT', res)
     yield put({ type: types.SEARCH_RESOLVED, data: res })
   }
   catch(e) {

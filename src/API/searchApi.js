@@ -6,7 +6,7 @@ class SearchApi {
           .then(response => response.json())
           .then((data) => {
             resolve(data.albums.items || [])
-          })
+          }, reject)
       }
       else {
         resolve([])
