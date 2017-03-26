@@ -1,0 +1,16 @@
+.searchbox {
+  font-size: 12px;
+  background-color: #282828;
+  padding: 12px;
+  .search-input {
+    color: #353535;
+    padding: 0 24px;
+    border: 1px solid #282828;
+    border-radius: 40px;
+    width: 68%;
+    height: 24px;
+    outline: none;
+    margin: 0 auto;
+    display: block;
+  }
+}
